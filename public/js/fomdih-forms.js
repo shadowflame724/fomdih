@@ -111,7 +111,7 @@ $(function () {
             $('html, body').animate({scrollTop: goDistance}, 1000);
         }
         else {
-            window.location.href = "portfolio" + "#formOpen";
+            window.location.href = "/portfolio" + "#formOpen";
         }
 
     });
