@@ -113,6 +113,6 @@ class PortfolioController extends Controller
 
         event(new PortfolioDeleted($portfolio));
 
-        return redirect()->route('admin.portfolios.deleted')->withFlashSuccess('Порфолио удалено');
+        return redirect()->route('admin.portfolios.index')->withFlashSuccess('Порфолио удалено');
     }
 }

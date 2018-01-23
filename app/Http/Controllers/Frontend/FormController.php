@@ -24,17 +24,23 @@ class FormController extends Controller
     {
         $form = new Form();
 
-        $form->setUserName($request->user_name);
-        $form->setUserEmail($request->user_email);
-        $form->setUserTel($request->user_tel);
-        $form->setText($request->text);
-        if($request->hasFile('user_file')){
-            $path = $request->user_file->storeAs('forms', uniqid(). '.' . $request->user_file->getClientOriginalExtension());
+        $form->setUserName($request->get('user-name'));
+        $form->setUserEmail($request->get('user-email'));
+        $form->setUserTel($request->get('user-tel'));
+        $form->setText($request->get('text',''));
+        $form->setType($request->get('formName',''));
+        $form->setCreatedAt();
+
+        if($request->hasFile('user-file')){
+            $request->validate([
+                'user-file' => ['max:20000', 'mimes:x3*,txt,pdf,docx,doc,xls,jp*,png,gif,bpm,psd,cdr,jpeg'],
+            ]);
+            $path = $request->get('user-file');
             $form->setUserFile($path);
         }
 
         try{
-            Mail::to('example@example.com')
+            Mail::to($request->get('user-email'))
                 ->queue(new FormSent($form));
 
 

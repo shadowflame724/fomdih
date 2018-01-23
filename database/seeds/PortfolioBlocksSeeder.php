@@ -161,8 +161,8 @@ class PortfolioBlocksSeeder extends Seeder
             ],
             [
                 'type' => 'default',
-                'bg_color' => '#313131',
-                'color' => '#fff',
+                'bg_color' => '#fff',
+                'color' => '#000',
                 'text_align' => 'center',
                 'content' => '<div class="middle-container">
             <h3>Шрифты и корпоративные цвета</h3>
@@ -344,12 +344,13 @@ class PortfolioBlocksSeeder extends Seeder
                 'bg_color' => '',
                 'color' => '',
                 'text_align' => '',
-                'content' => '<div class="img-cont">
+                'content' => '<div class="two-img-cont">
+        <div class="img-cont">
             <img src="/images/portfolio-material/image-10.jpg" alt="portfolio-img">
         </div>
         <div class="img-cont">
             <img src="/images/portfolio-material/image-11.jpg" alt="portfolio-img">
-        </div>'
+        </div></div>'
             ],
             [
                 'type' => 'default',
@@ -426,12 +427,13 @@ class PortfolioBlocksSeeder extends Seeder
                 'bg_color' => '',
                 'color' => '',
                 'text_align' => '',
-                'content' => '<div class="img-cont">
+                'content' => '<div class="two-img-cont">
+        <div class="img-cont">
             <img src="/images/portfolio-material/image-14.jpg" alt="portfolio-img">
         </div>
         <div class="img-cont">
             <img src="/images/portfolio-material/image-13.jpg" alt="portfolio-img">
-        </div>'
+        </div></div>'
             ],
             [
                 'type' => 'default',
@@ -447,12 +449,13 @@ class PortfolioBlocksSeeder extends Seeder
                 'bg_color' => '',
                 'color' => '',
                 'text_align' => '',
-                'content' => '<div class="img-cont">
+                'content' => '<div class="two-img-cont">
+        <div class="img-cont">
             <img src="/images/portfolio-material/image-15.jpg" alt="portfolio-img">
         </div>
         <div class="img-cont">
             <img src="/images/portfolio-material/image-16.jpg" alt="portfolio-img">
-        </div>'
+        </div></div>'
             ],
             [
                 'type' => 'default',

@@ -13,6 +13,29 @@ class Form
     private $text;
     private $userFile;
     private $createdAt;
+    private $type;
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        if($this->type == 'request-form'){
+            return 'Заявка';
+        }elseif($this->type == 'tender-form'){
+            return 'Тендер';
+        }else{
+            return '';
+        }
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
 
     /**
      * @return mixed
