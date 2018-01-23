@@ -132,7 +132,7 @@ $(function () {
         // "/api/order-store"
         url: "/api/order-store", // путь к обработчику
         type: "POST", // Метод отправки
-        data: { formName: $(formElem).attr("name") }, // An object containing extra data that should be submitted along with the form.
+        data: { formName: $(orderForm).attr("name") }, // An object containing extra data that should be submitted along with the form.
         success: function () {
             //код в этом блоке выполняется при успешной отправке сообщения
             // alert("Ваше сообщение отправлено!");
