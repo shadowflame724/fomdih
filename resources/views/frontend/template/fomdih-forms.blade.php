@@ -91,13 +91,43 @@
 </form>
 <!-- end of order-form -->
 
-<!-- start of success-form -->
-<form class="fomdih-form success-form">
-    <div class="form-wrapper outer-cont">
+<!-- start of success-form pop-up -->
+<div class="fomdih-form success-form">
+    <div class="form-wrapper">
         <div class="container">
-            <p class="form-header">Спасибо за ваше сообщение!</p>
-            <p class="form-header-small">КОНТАКТЫ</p>
+            <div class="full-cont outer-cont">
+                <div class="left-cont">
+                    <div class="success-form-headers">
+                        <p class="header-1">Терпение, <span class="yellow-color">мой друг</span>,</p>
+                        <p class="header-2">и Ваша щетина превратится в <span class="yellow-color">золото!</span></p>
+                        <p class="header-3 desktop-visible">Мы скоро ответим на Ваше обращение</p>
+
+                        <div class="desktop-hidden">
+                            <div class="spec-cont">
+                                <div class="spec-left">
+                                    <p class="header-3">Мы скоро ответим на Ваше обращение</p>
+                                </div>
+                                <div class="spec-right">
+                                    <div class="img-cont success-img-cont">
+                                        <img src="/images/general/svg/cat-form.svg" alt="success-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="/" class="gl-yellow-btn success-close-btn">
+                        @include('frontend.template-svg.button-brief')
+                        <span>перейти к сайту</span>
+                    </a>
+                </div>
+                <div class="right-cont desktop-visible">
+                    <div class="img-cont success-img-cont">
+                        <img src="/images/general/svg/cat-form.svg" alt="success-img">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</form>
-<!-- end of success-form -->
+</div>
+<!-- end of success-form pop-up-->
