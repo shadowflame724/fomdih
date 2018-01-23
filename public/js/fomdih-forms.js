@@ -166,8 +166,8 @@ $(function () {
     function contactFormLogic(formElem) {
         $(formElem).ajaxForm({
             url: "/api/order-store", // путь к обработчику
-            type: "POST", //Метод отправки
-            data: { formName: $(formElem).attr("name") },
+            type: "POST", // Метод отправки
+            data: { formName: $(formElem).attr("name") }, // An object containing extra data that should be submitted along with the form.
             success: function () {
                 //код в этом блоке выполняется при успешной отправке сообщения
                 // alert("Ваше сообщение отправлено!");
