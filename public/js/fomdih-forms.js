@@ -92,7 +92,7 @@ $(function () {
             fomdihFormShow(orderForm);
 
             temp1 = $(elem).offset().top;
-            console.log("temp1 = " + temp1);
+            // console.log("temp1 = " + temp1);
 
             // temp2 = formCard[0].offsetTop;
             // console.log(formCard);
@@ -130,7 +130,7 @@ $(function () {
 
     $(orderForm).ajaxForm({
         // "/api/order-store"
-        url: "/form-store", // путь к обработчику
+        url: "/api/order-store", // путь к обработчику
         type: "POST", //Метод отправки
         success: function () {
             //код в этом блоке выполняется при успешной отправке сообщения
@@ -165,7 +165,7 @@ $(function () {
 
     function contactFormLogic(formElem) {
         $(formElem).ajaxForm({
-            url: "/form-store", // путь к обработчику
+            url: "/api/order-store", // путь к обработчику
             type: "POST", //Метод отправки
             success: function () {
                 //код в этом блоке выполняется при успешной отправке сообщения

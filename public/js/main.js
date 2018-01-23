@@ -109,7 +109,7 @@ $(function () {
         }
         // end of: determine is it mobile screen
 
-        if (window.innerWidth < 1101) {
+        if (window.innerWidth <= 1100) {
             // $(mainMenu).css("display", "none");
             headerMenuOff();
         } else {
@@ -195,12 +195,12 @@ $(function () {
         // ****************************************************************************
         // *************    GENERAL ANIMATIONS FOR ALL PAGES    *************
 
-        // $('.our-works .more-portfolio-cont .portfolio-item').addClass("invisible").viewportChecker({
-        //     classToAdd: 'animated fadeInUp',
-        //     classToRemove: 'visible',
-        //     offset: '-50%',
-        //     repeat: false
-        // });
+        $(".more-portfolio-btn").addClass("invisible").viewportChecker({
+            classToAdd: 'animated fadeInUp',
+            classToRemove: 'visible',
+            offset: '10%',
+            repeat: false
+        });
     }
 
 });
