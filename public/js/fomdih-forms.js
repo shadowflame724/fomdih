@@ -92,7 +92,7 @@ $(function () {
             fomdihFormShow(orderForm);
 
             temp1 = $(elem).offset().top;
-            console.log("temp1 = " + temp1);
+            // console.log("temp1 = " + temp1);
 
             // temp2 = formCard[0].offsetTop;
             // console.log(formCard);
@@ -111,7 +111,7 @@ $(function () {
             $('html, body').animate({scrollTop: goDistance}, 1000);
         }
         else {
-            window.location.href = "portfolio.html" + "#formOpen";
+            window.location.href = "/portfolio" + "#formOpen";
         }
 
     });
@@ -129,9 +129,9 @@ $(function () {
     // form-handler
 
     $(orderForm).ajaxForm({
-        // "/api/order-store"
         url: "/form-store", // путь к обработчику
-        type: "POST", //Метод отправки
+        type: "POST", // Метод отправки
+        data: { formName: $(orderForm).attr("name") }, // An object containing extra data that should be submitted along with the form.
         success: function () {
             //код в этом блоке выполняется при успешной отправке сообщения
             // alert("Ваше сообщение отправлено!");
@@ -166,7 +166,8 @@ $(function () {
     function contactFormLogic(formElem) {
         $(formElem).ajaxForm({
             url: "/form-store", // путь к обработчику
-            type: "POST", //Метод отправки
+            type: "POST", // Метод отправки
+            data: { formName: $(formElem).attr("name") }, // An object containing extra data that should be submitted along with the form.
             success: function () {
                 //код в этом блоке выполняется при успешной отправке сообщения
                 // alert("Ваше сообщение отправлено!");
@@ -177,7 +178,7 @@ $(function () {
             },
             error: function () {
                 alert("Произошла ошибка при отправке...( Попробуйте еще раз!");
-                // console.log(formElem);
+                // console.log($(formElem).attr("name"));
             }
         });
     }

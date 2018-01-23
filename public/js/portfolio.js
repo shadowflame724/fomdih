@@ -77,6 +77,13 @@ $(function () {
             $(portfolioElems[i]).addClass("hidden-item");
         }
 
+        var horizOrder = true;
+        if (window.innerWidth <= 1400) {
+            horizOrder = false;
+        } else {
+            horizOrder = true;
+        }
+
         // start of initialise masonry-plugin
         $(portfolioItemsCont).masonry({
             // options...
@@ -84,7 +91,7 @@ $(function () {
             // use element for option
             columnWidth: '.grid-sizer',
             percentPosition: true,
-            horizontalOrder: true // Lays out items to (mostly) maintain horizontal left-to-right order
+            horizontalOrder: horizOrder // Lays out items to (mostly) maintain horizontal left-to-right order
         });
         // end of initialise masonry-plugin
     }
@@ -115,10 +122,9 @@ $(function () {
             for (var i = (itemsForPage) * (portfolioBtnCnt); i < itemsForPage * (portfolioBtnCnt + 1); i++ ) {
                 $(currentPortfolioItems[i]).removeClass("hidden-item");
             }
-            $(portfolioItemsCont).masonry('layout'); // trigger layout after hidden items added
+
+            $(portfolioItemsCont).masonry(); // trigger layout after hidden items added
         }
-
-
     });
 
     $(portfolioMenuItems).click(function () {
@@ -150,18 +156,11 @@ $(function () {
         // ****************************************************************************
         // *************    ANIMATIONS FOR THIS PAGE    *************
 
-        // $('.our-works .more-portfolio-cont .portfolio-item').addClass("invisible").viewportChecker({
+        // $(morePortfolioBtn).addClass("invisible").viewportChecker({
         //     classToAdd: 'animated fadeInUp',
         //     classToRemove: 'visible',
-        //     offset: '-50%',
+        //     offset: '10%',
         //     repeat: false
         // });
-
-        $(morePortfolioBtn).addClass("invisible").viewportChecker({
-            classToAdd: 'animated fadeInUp',
-            classToRemove: 'visible',
-            offset: '10%',
-            repeat: false
-        });
     }
 });
