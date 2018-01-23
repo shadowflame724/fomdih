@@ -33,7 +33,7 @@
                 </div>
 
                 <a href="{{ route('frontend.portfolio') }}" class="gl-yellow-btn more-portfolio-btn">
-                    //= template-svg/button-more-works.html
+                    @include('frontend.template-svg.button-more-works')
                     <span>наши работы</span>
                 </a>
             </div>
