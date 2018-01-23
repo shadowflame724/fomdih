@@ -1,5 +1,5 @@
 <!-- start of order-form -->
-<form class="fomdih-form order-form">
+<form class="fomdih-form order-form" name="order-form">
     <div class="form-wrapper">
         <div class="container">
             <div class="right-cont">
@@ -19,10 +19,8 @@
                                         <img src="/images/general/portfolio-image-empty.png" alt="portfolio-image">
                                     </div>
                                     @include('frontend.template-svg.question')
-
                                     <div class="portfolio-info" style="color: #ffcd00">
                                         @include('frontend.template-svg.portfolio-small-blot')
-
                                         <p class="portfolio-name" style="color: #000">
                                             <span>ваш проект</span>
                                         </p>
@@ -41,7 +39,6 @@
                             <div class="close-btn">
                                 <i class="icon close-icon-form-order">
                                     @include('frontend.template-svg.close-icon-form-order')
-
                                 </i>
                             </div>
                         </div>
@@ -51,13 +48,13 @@
                 <div class="form-cont outer-cont">
                     <div class="inputs-cont">
                         <div class="input-col">
-                            <input type="text" name="user_name" required="required" class="user-input" placeholder="Ваше имя *" tabindex="1">
+                            <input type="text" name="user-name" required="required" class="user-input" placeholder="Ваше имя *" tabindex="1">
                         </div>
                         <div class="input-col">
-                            <input type="tel" name="user_tel" required="required" class="user-input" placeholder="Ваш телефон *" tabindex="2">
+                            <input type="tel" name="user-tel" required="required" class="user-input" placeholder="Ваш телефон *" tabindex="2">
                         </div>
                         <div class="input-col">
-                            <input type="email" name="user_email" required="required" class="user-input" placeholder="Ваш email *" tabindex="3">
+                            <input type="email" name="user-email" required="required" class="user-input" placeholder="Ваш email *" tabindex="3">
                         </div>
                     </div>
 
@@ -66,14 +63,13 @@
                     </div>
 
                     <div class="add-file-cont">
-                        <input type="file" name="user_file" id="user-file"
+                        <input type="file" name="user-file" id="user-file"
                                multiple data-multiple-caption="{count} files selected"
                                class="inputfile inputfile-1"
                                style="display: none">
                         <label for="user-file">
                             <i class="plus-icon">
                                 @include('frontend.template-svg.contacts-add-file-icon')
-
                             </i>
                             <span>Добавить файл</span>
                         </label>
@@ -81,7 +77,6 @@
 
                     <button type="submit" class="gl-yellow-btn submit-btn" tabindex="4">
                         @include('frontend.template-svg.button-brief')
-
                         <span>отправить</span>
                     </button>
                 </div>
