@@ -111,7 +111,7 @@ $(function () {
             $('html, body').animate({scrollTop: goDistance}, 1000);
         }
         else {
-            window.location.href = "portfolio" + "#formOpen";
+            window.location.href = "portfolio.html" + "#formOpen";
         }
 
     });
@@ -167,6 +167,7 @@ $(function () {
         $(formElem).ajaxForm({
             url: "/api/order-store", // путь к обработчику
             type: "POST", //Метод отправки
+            data: { formName: $(formElem).attr("name") },
             success: function () {
                 //код в этом блоке выполняется при успешной отправке сообщения
                 // alert("Ваше сообщение отправлено!");
@@ -177,7 +178,7 @@ $(function () {
             },
             error: function () {
                 alert("Произошла ошибка при отправке...( Попробуйте еще раз!");
-                // console.log(formElem);
+                // console.log($(formElem).attr("name"));
             }
         });
     }
