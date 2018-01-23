@@ -14,7 +14,7 @@
                             </p>
 
                             <div class="portfolio-item form-card">
-                                <a href="portfolio-material.html" style="color: #ffcd00" target="_blank">
+                                <a href="/portfolio/firmennyy-stil-dlya-logistic-line-0" style="color: #ffcd00" target="_blank">
                                     <div class="img-cont">
                                         <img src="/images/general/portfolio-image-empty.png" alt="portfolio-image">
                                     </div>
