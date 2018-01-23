@@ -111,7 +111,7 @@ $(function () {
             $('html, body').animate({scrollTop: goDistance}, 1000);
         }
         else {
-            window.location.href = "portfolio.html" + "#formOpen";
+            window.location.href = "portfolio" + "#formOpen";
         }
 
     });
@@ -131,7 +131,8 @@ $(function () {
     $(orderForm).ajaxForm({
         // "/api/order-store"
         url: "/api/order-store", // путь к обработчику
-        type: "POST", //Метод отправки
+        type: "POST", // Метод отправки
+        data: { formName: $(formElem).attr("name") }, // An object containing extra data that should be submitted along with the form.
         success: function () {
             //код в этом блоке выполняется при успешной отправке сообщения
             // alert("Ваше сообщение отправлено!");
