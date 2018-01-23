@@ -1,7 +1,7 @@
 @extends ('frontend.layouts.app')
-@section ('title', $page->name)
-@section ('seo_description', $page->seo_description)
-@section ('seo_keywords', $page->seo_keywords)
+@section ('title', "404 ошибка")
+@section ('seo_description', "Something went wrong")
+@section ('seo_keywords', "fomdih, page not found")
 
 @section('content')
     @include('frontend.template.header-white')
