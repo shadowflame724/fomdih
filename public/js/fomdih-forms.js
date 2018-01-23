@@ -129,8 +129,7 @@ $(function () {
     // form-handler
 
     $(orderForm).ajaxForm({
-        // "/api/order-store"
-        url: "/api/order-store", // путь к обработчику
+        url: "/form-store", // путь к обработчику
         type: "POST", // Метод отправки
         data: { formName: $(orderForm).attr("name") }, // An object containing extra data that should be submitted along with the form.
         success: function () {
@@ -166,7 +165,7 @@ $(function () {
 
     function contactFormLogic(formElem) {
         $(formElem).ajaxForm({
-            url: "/api/order-store", // путь к обработчику
+            url: "/form-store", // путь к обработчику
             type: "POST", // Метод отправки
             data: { formName: $(formElem).attr("name") }, // An object containing extra data that should be submitted along with the form.
             success: function () {
