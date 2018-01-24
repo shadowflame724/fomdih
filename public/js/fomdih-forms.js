@@ -112,6 +112,7 @@ $(function () {
         }
         else {
             window.location.href = "/portfolio" + "#formOpen";
+            // window.location.href = "portfolio.html" + "#formOpen";
         }
 
     });

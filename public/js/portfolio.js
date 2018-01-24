@@ -114,10 +114,10 @@ $(function () {
     $(morePortfolioBtn).click(function (event) {
         event.preventDefault();
 
-        var stop = Math.floor(currentPortfolioItems.length / itemsForPage);
+        var stop = Math.ceil(currentPortfolioItems.length / itemsForPage);
         // console.log("stop = " + stop + "; BtnCnt = " + portfolioBtnCnt);
 
-        if (portfolioBtnCnt < stop) {
+        if (portfolioBtnCnt < stop - 1) {
             portfolioBtnCnt++;
             for (var i = (itemsForPage) * (portfolioBtnCnt); i < itemsForPage * (portfolioBtnCnt + 1); i++ ) {
                 $(currentPortfolioItems[i]).removeClass("hidden-item");

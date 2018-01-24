@@ -148,7 +148,7 @@ html, body {
   font-weight: normal; }
 
 .scroll-lock {
-  overflow-y: hidden; }
+  overflow: hidden; }
 
 .gl-container {
   position: relative;
@@ -438,7 +438,10 @@ header {
   width: 102%;
   padding: 5px 0;
   text-align: center;
-  transition: background-position 2s; }
+  transition: background-position 2s;
+  /* однопальцевый скролл для iPad */
+  -webkit-overflow-scrolling: touch;
+  /* фикс для странностей в iPad */ }
   header .logo-cont {
     display: inline-block;
     float: left;
@@ -2021,7 +2024,8 @@ footer {
   min-height: 100vh;
   overflow-y: auto;
   /* однопальцевый скролл для iPad*/
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  /* фикс для странностей в iPad */ }
   .fomdih-form .close-btn .icon {
     cursor: pointer;
     transition: all 0.4s; }
