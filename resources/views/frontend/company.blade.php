@@ -1,5 +1,5 @@
 @extends ('frontend.layouts.app')
-@section ('title', $page->name)
+@section ('title', $page->seo_title)
 @section ('seo_description', $page->seo_description)
 @section ('seo_keywords', $page->seo_keywords)
 

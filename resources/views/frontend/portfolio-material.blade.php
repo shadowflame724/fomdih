@@ -1,5 +1,5 @@
 @extends ('frontend.layouts.app')
-@section ('title', $portfolio->name)
+@section ('title', $portfolio->seo_title)
 @section ('seo_description', $portfolio->seo_description)
 @section ('seo_keywords', $portfolio->seo_keywords)
 @push('after-styles')

@@ -22,6 +22,7 @@
 
                             <div class="card-body">
                                 {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
+                                {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
