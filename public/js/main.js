@@ -155,7 +155,8 @@ $(function () {
 
     function headerMenuOn() {
         $(headerMenuBtn).addClass("menu-btn-active");
-        $(mainMenu).slideDown();
+        // $(mainMenu).slideDown();
+        $(mainMenu).fadeIn(0);
         $(header).addClass("active");
         $(header).addClass("header-black");
         $("html, body").addClass("scroll-lock");
@@ -163,7 +164,8 @@ $(function () {
 
     function headerMenuOff() {
         $(headerMenuBtn).removeClass("menu-btn-active");
-        $(mainMenu).slideUp();
+        // $(mainMenu).slideUp();
+        $(mainMenu).fadeOut(0);
         $(header).removeClass("active");
         $(header).removeClass("header-black");
         $("html, body").removeClass("scroll-lock");
