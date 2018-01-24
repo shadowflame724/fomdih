@@ -25,6 +25,7 @@
                         <tr>
                             <th>Категория</th>
                             <th>Название</th>
+                            <th>Компания</th>
                             <th>{{ __('labels.general.actions') }}</th>
                         </tr>
                         </thead>
@@ -33,6 +34,7 @@
                             <tr>
                                 <td>{{ $portfolio->category->name }}</td>
                                 <td>{!! ucfirst($portfolio->name) !!}</td>
+                                <td>{!! ucfirst($portfolio->company_name) !!}</td>
                                 <td>{!! $portfolio->action_buttons !!}</td>
                             </tr>
                         @endforeach

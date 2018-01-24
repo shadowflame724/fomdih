@@ -16,11 +16,10 @@ class PortfolioController extends Controller
     public function show($slug)
     {
         $portfolio = Portfolio::where('slug', $slug)->with(['category', 'portfolioBlocks'])->first();
-        $portfolioBlocks = $portfolio->portfolioBlocks->sortBy('order');
-
         if($portfolio == null){
             abort(404);
         }
+        $portfolioBlocks = $portfolio->portfolioBlocks->sortBy('order');
 
         return view('frontend.portfolio-material', [
             'portfolio' => $portfolio,

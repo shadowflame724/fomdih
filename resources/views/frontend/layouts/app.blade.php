@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @stack('before-styles')
+
     @include('frontend.template.head')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', app_name())</title>
@@ -8,7 +10,6 @@
     <meta name="keywords" content="@yield('seo_keywords', 'Anthony Rappa')">
     @yield('meta')
 
-    @stack('before-styles')
 
     @stack('after-styles')
 </head>
