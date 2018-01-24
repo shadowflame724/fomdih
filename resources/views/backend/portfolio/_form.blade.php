@@ -7,7 +7,7 @@
     <div class="col">
 
         <div class="form-group row">
-            {{ html()->label('Категория')
+            {{ html()->label('Категория *')
             ->class('col-md-2 form-control-label')
             ->for('category_id') }}
 
@@ -25,7 +25,7 @@
         </div><!--form-group-->
 
         <div class="form-group row">
-            {{ html()->label('Тип')
+            {{ html()->label('Тип *')
             ->class('col-md-2 form-control-label')
             ->for('type') }}
 
@@ -43,7 +43,7 @@
         </div><!--form-group-->
 
         <div class="form-group row">
-            {{ html()->label("Название")
+            {{ html()->label("Название *")
                 ->class('col-md-2 form-control-label')
                 ->for('name') }}
 
@@ -57,7 +57,7 @@
         </div><!--form-group-->
 
         <div class="form-group row">
-            {{ html()->label("Название компании")
+            {{ html()->label("Название компании *")
                 ->class('col-md-2 form-control-label')
                 ->for('company_name') }}
 
@@ -65,7 +65,8 @@
                 {{ html()->text('company_name')
                     ->class('form-control')
                     ->placeholder("LOGISTIC LINE")
-                    ->attribute('maxlength', 191) }}
+                    ->attribute('maxlength', 191)
+                     ->required()}}
             </div><!--col-->
         </div><!--form-group-->
 
@@ -99,32 +100,32 @@
 
 
         <div class="form-group row">
-            {{ html()->label("Основной цвет")
+            {{ html()->label("Основной цвет *")
                 ->class('col-md-2 form-control-label')
                 ->for('main_color') }}
 
             <div class="col-md-10">
                 {{ html()->text('main_color')
-                    ->class('form-control')
-                    ->placeholder("#313131") }}
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
             </div><!--col-->
         </div><!--form-group-->
 
         <div class="form-group row">
-            {{ html()->label("Blot цвет")
+            {{ html()->label("Blot цвет *")
                 ->class('col-md-2 form-control-label')
                 ->for('blot_color') }}
 
             <div class="col-md-10">
                 {{ html()->text('blot_color')
-                    ->class('form-control')
-                    ->placeholder("#313131") }}
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
             </div><!--col-->
         </div><!--form-group-->
 
 
         <div class="form-group row">
-            {{ html()->label("SVG")
+            {{ html()->label("SVG *")
                 ->class('col-md-2 form-control-label')
                 ->for('svg') }}
 
@@ -138,7 +139,7 @@
 
 
         <div class="form-group row">
-            {{ html()->label("Фоновое изображение")
+            {{ html()->label("Фоновое изображение *")
                 ->class('col-md-2 form-control-label')
                 ->for('main_image') }}
 
@@ -162,7 +163,7 @@
 
 
         <div class="form-group row">
-            {{ html()->label("Header изображение")
+            {{ html()->label("Header изображение *")
                 ->class('col-md-2 form-control-label')
                 ->for('header_image') }}
 
@@ -185,7 +186,7 @@
         @endif
 
         <div class="form-group row">
-            {{ html()->label("Preview изображение (small)")
+            {{ html()->label("Preview изображение (small) *")
                 ->class('col-md-2 form-control-label')
                 ->for('thumb_image') }}
 

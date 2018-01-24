@@ -1,8 +1,39 @@
 <script src="/libs/tinymce/tinymce.js"></script>
+<script src="/libs/bootstrap-colorpicker-master/dist/js/bootstrap-colorpicker.js"></script>
 
 <script>
     var count = '{{ $count }}';
+    function initColorPicker () {
+        $('.color-picker').colorpicker();
+    }
+    function initDeleteBlock () {
+        $('.remove-block').on('click', function(){
+            var blockId = $(this)["0"].dataset.id;
+            if(blockId != null){
+                $.ajax({
+                    type: "DELETE",
+                    url: '/admin/block/' + blockId,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (data) {
+                        swal({
+                            title: data.message,
+                            type: "success"
+                        });
+                    },
+                    error: function (data) {
+                        swal({
+                            title: data.message,
+                            type: "error"
+                        });
+                    }
+                });
 
+            }
+            $(this).parent().remove();
+        });
+    }
     $("#add_block_button").on('click', function () {
         var selectorValue = $('#block_selector').val();
         var neededBlock;
@@ -15,19 +46,23 @@
             '<div class="form-group row">\n' +
             '                        <label class="col-md-2 form-control-label" for="blocks\[' + count + '\]\[bg_color\]">bg_color</label>\n' +
             '                        <div class="col-md-10">\n' +
-            '                            <input type="text" id="blocks\[' + count + '\]\[bg_color\]" name="blocks\[' + count + '\]\[bg_color\]" class="form-control">\n' +
+            '                            <input type="text" id="blocks\[' + count + '\]\[bg_color\]" name="blocks\[' + count + '\]\[bg_color\]" class="form-control color-picker">\n' +
             '                        </div><!--col-->\n' +
             '                    </div><!--form-group-->\n' +
             '<div class="form-group row">\n' +
             '                        <label class="col-md-2 form-control-label" for="blocks\[' + count + '\]\[color\]">color</label>\n' +
             '                        <div class="col-md-10">\n' +
-            '                            <input type="text" id="blocks\[' + count + '\][color]" name="blocks\[' + count + '\][color]" class="form-control">\n' +
+            '                            <input type="text" id="blocks\[' + count + '\][color]" name="blocks\[' + count + '\][color]" class="form-control color-picker">\n' +
             '                        </div><!--col-->\n' +
             '                    </div><!--form-group-->\n' +
             '<div class="form-group row">\n' +
             '                        <label class="col-md-2 form-control-label" for="blocks\[' + count + '\]\[text_align\]">text_align</label>\n' +
             '                        <div class="col-md-10">\n' +
-            '                            <input type="text" id="blocks\[' + count + '\][text_align]" name="blocks\[' + count + '\][text_align]" class="form-control">\n' +
+                '<select name="blocks\[' + count + '\]\[text_align\]" class="form-control">\n' +
+            '                                                              <option value="left">left</option>\n' +
+            '                                                              <option  value="center">center</option>\n' +
+            '                                                              <option  value="right">right</option>\n' +
+            '                                                          </select>\n' +
             '                        </div><!--col-->\n' +
             '                    </div><!--form-group-->\n' +
             '                    <div class="form-group row">\n' +
@@ -44,6 +79,7 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
+                '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
             '<hr>\n' +
             '            </div>';
 
@@ -67,6 +103,8 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
+            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
+
             '<hr>\n' +
             '            </div>';
 
@@ -89,6 +127,8 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
+            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
+
             '<hr>\n' +
             '            </div>';
 
@@ -111,6 +151,8 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
+            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
+
             '<hr>\n' +
             '            </div>';
 
@@ -126,6 +168,8 @@
 
         $('#blocks-management').append(neededBlock);
         init();
+        initColorPicker();
+        initDeleteBlock();
     });
 
     var middle = {
@@ -270,4 +314,6 @@
     }
 
     init();
+    initColorPicker();
+    initDeleteBlock();
 </script>

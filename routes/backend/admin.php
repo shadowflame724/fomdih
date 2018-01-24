@@ -7,6 +7,7 @@ Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::resource('portfolios', 'PortfolioController', ['except' => ['show']]);
+Route::delete('block/{block}', 'PortfolioBlocksController@delete')->name('block.delete');
 
 /**
  * Pages routes

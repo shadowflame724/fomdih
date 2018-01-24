@@ -1,4 +1,4 @@
-<div id="blocks-management">
+ <div id="blocks-management">
     <div class="row mt-4">
         <h4 class="card-title col-mb-12">
             Управление блоками
@@ -49,12 +49,8 @@
                             </div><!--form-group-->
                         </div>
                     </div>
-                    <hr><a href="'.route('admin.portfolios.destroy', $this).'"
-                           data-method="delete"
-                           data-trans-button-cancel="'.__('buttons.general.cancel').'"
-                           data-trans-button-confirm="'.__('buttons.general.crud.delete').'"
-                           data-trans-title="'.__('strings.backend.general.are_you_sure').'"
-                           class="btn btn-danger"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'.__('buttons.general.crud.delete').'"></i></a>
+                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="{{ $block['id'] }}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="{{__('buttons.general.crud.delete')}}"></i></a>
+                    <hr>
                 </div>
                 @php($count++)
                 @break
@@ -84,6 +80,7 @@
                             </div><!--form-group-->
                         </div>
                     </div>
+                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="{{ $block['id'] }}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="{{__('buttons.general.crud.delete')}}"></i></a>
                     <hr>
                 </div>
                 @php($count++)
@@ -114,6 +111,7 @@
                             </div><!--form-group-->
                         </div>
                     </div>
+                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="{{ $block['id'] }}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="{{__('buttons.general.crud.delete')}}"></i></a>
                     <hr>
                 </div>
                 @php($count++)
@@ -127,6 +125,31 @@
 
                         <input type="hidden" name="blocks[{{$count}}][type]" value="default">
                         <div class="col">
+                            <div class="form-group row">
+                                                       <label class="col-md-2 form-control-label" for="blocks[{{$count}}][bg_color]">bg_color</label>
+                                                      <div class="col-md-10">
+                                                              <input type="text" id="blocks[{{$count}}][bg_color]" name="blocks[{{$count}}][bg_color]" value="{{ $block['bg_color'] }}" class="form-control color-picker">
+                                                          </div><!--col-->
+                                                  </div><!--form-group-->
+                            <div class="form-group row">
+                                                      <label class="col-md-2 form-control-label" for="blocks[{{$count}}][color]">color</label>
+                                                      <div class="col-md-10">
+                                                              <input type="text" id="blocks[{{$count}}][color]" name="blocks[{{$count}}][color]" value="{{ $block['color'] }}" class="form-control color-picker">
+                                                          </div><!--col-->
+                                                  </div><!--form-group-->
+                            <div class="form-group row">
+                                                      <label class="col-md-2 form-control-label" for="blocks[{{$count}}][text_align]">text_align</label>
+                                                      <div class="col-md-10">
+                                                          <select name="blocks[{{$count}}][text_align]" class="form-control">
+                                                              <option {{ $block['text_align'] == "left" ? 'selected' : '' }} value="left">left</option>
+                                                              <option {{ $block['text_align'] == "center" ? 'selected' : '' }}  value="center">center</option>
+                                                              <option {{ $block['text_align'] == "right" ? 'selected' : '' }}  value="right">right</option>
+                                                          </select>
+                                                          </div><!--col-->
+                                                  </div><!--form-group-->
+                            
+                            
+                            
                             <div class="form-group row">
                                 <label class="col-md-2 form-control-label"
                                        for="blocks[{{$count}}][content]">Контент</label>
@@ -144,79 +167,12 @@
                             </div><!--form-group-->
                         </div>
                     </div>
+                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="{{ $block['id'] }}"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="{{__('buttons.general.crud.delete')}}"></i></a>
                     <hr>
                 </div>
                 @php($count++)
                 @break
             @endswitch
         @endforeach
-
-    {{--@else--}}
-        {{--<div class="block-container">--}}
-            {{--<h6>defaultBlock</h6>--}}
-            {{--<div class="row mt-4">--}}
-                {{--{{ html()->hidden('blocks['.$count.'][type]')--}}
-                {{--->value('default') }}--}}
-                {{--<div class="col">--}}
-                    {{--<div class="form-group row">--}}
-                        {{--{{ html()->label("bg_color")--}}
-                            {{--->class('col-md-2 form-control-label')--}}
-                            {{--->for('blocks['.$count.']bg_color') }}--}}
-
-                        {{--<div class="col-md-10">--}}
-                            {{--{{ html()->text('blocks['.$count.'][bg_color]')--}}
-                                {{--->class('form-control') }}--}}
-                        {{--</div><!--col-->--}}
-                    {{--</div><!--form-group-->--}}
-
-                    {{--<div class="form-group row">--}}
-                        {{--{{ html()->label("color")--}}
-                            {{--->class('col-md-2 form-control-label')--}}
-                            {{--->for('blocks['.$count.']color') }}--}}
-
-                        {{--<div class="col-md-10">--}}
-                            {{--{{ html()->text('blocks['.$count.'][color]')--}}
-                                {{--->class('form-control') }}--}}
-                        {{--</div><!--col-->--}}
-                    {{--</div><!--form-group-->--}}
-
-                    {{--<div class="form-group row">--}}
-                        {{--{{ html()->label("text_align")--}}
-                            {{--->class('col-md-2 form-control-label')--}}
-                            {{--->for('blocks['.$count.']text_align') }}--}}
-
-                        {{--<div class="col-md-10">--}}
-                            {{--{{ html()->text('blocks['.$count.'][text_align]')--}}
-                                {{--->class('form-control') }}--}}
-                        {{--</div><!--col-->--}}
-                    {{--</div><!--form-group-->--}}
-
-                    {{--<div class="form-group row">--}}
-                        {{--{{ html()->label("Контент")--}}
-                            {{--->class('col-md-2 form-control-label')--}}
-                            {{--->for('blocks['.$count.']content') }}--}}
-
-                        {{--<div class="col-md-10">--}}
-                            {{--{{ html()->textarea('blocks['.$count.'][content]')--}}
-                                {{--->class('form-control blockTextBox')--}}
-                                {{--->required() }}--}}
-                        {{--</div><!--col-->--}}
-                    {{--</div><!--form-group-->--}}
-
-                    {{--<div class="form-group row">--}}
-                        {{--{{ html()->label("order")--}}
-                            {{--->class('col-md-2 form-control-label')--}}
-                            {{--->for('blocks['.$count.']order') }}--}}
-
-                        {{--<div class="col-md-10">--}}
-                            {{--<input id="blocks[{{$count}}]order" type="number" name='blocks[{{$count}}]order'--}}
-                                   {{--class="form-control">--}}
-                        {{--</div><!--col-->--}}
-                    {{--</div><!--form-group-->--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<hr>--}}
-        {{--</div>--}}
-
     @endif
 </div>

@@ -2,6 +2,7 @@
 
 @section ('title', "Управление портфолио" . ' | ' . "Редактировать портфолио")
 @push('after-styles')
+    <link href="/libs/bootstrap-colorpicker-master/dist/css/bootstrap-colorpicker.css" rel="stylesheet">
     <style>
         .mce-fullscreen header {
             display: none;

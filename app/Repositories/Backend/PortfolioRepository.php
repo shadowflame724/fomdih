@@ -83,6 +83,7 @@ class PortfolioRepository extends BaseRepository
     {
         return DB::transaction(function () use ($portfolio, $data) {
             if ($portfolio->update([
+                'company_name' => isset($data['company_name']) ? $data['company_name'] : $portfolio->company_name,
                 'type' => isset($data['type']) ? $data['type'] : $portfolio->type,
                 'name' => isset($data['name']) ? $data['name'] : $portfolio->name,
                 'slug' => isset($data['slug']) ? $data['slug'] : $portfolio->slug,
@@ -128,6 +129,10 @@ class PortfolioRepository extends BaseRepository
 
             if ($portfolio->delete()) {
                 $this->deletePortfolioImages($portfolio);
+                $blocks = $portfolio->portfolioBlocks();
+                foreach ($blocks as $block){
+                    $block->delete();
+                }
 
                 event(new PortfolioDeleted($portfolio));
 
@@ -152,8 +157,8 @@ class PortfolioRepository extends BaseRepository
     {
         try {
             Storage::delete([$portfolio->main_image,
-                $portfolio->thumb_image_big,
-                $portfolio->thumb_image_small
+                $portfolio->header_image,
+                $portfolio->thumb_image
             ]);
         } catch (\Exception $exception) {
             throw new GeneralException($exception->getMessage());
