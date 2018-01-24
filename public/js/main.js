@@ -153,12 +153,18 @@ $(function () {
     // add target="_blank" for all anchors
     // $("a:not(.menu-item)").attr("target", "_blank");
 
+    function touchMoveHandler(e) {
+        e.preventDefault();
+    }
+
     function headerMenuOn() {
         $(headerMenuBtn).addClass("menu-btn-active");
         $(mainMenu).slideDown();
         $(header).addClass("active");
         $(header).addClass("header-black");
         $("html, body").addClass("scroll-lock");
+
+        $(document).on('touchmove', touchMoveHandler);
     }
 
     function headerMenuOff() {
@@ -167,6 +173,8 @@ $(function () {
         $(header).removeClass("active");
         $(header).removeClass("header-black");
         $("html, body").removeClass("scroll-lock");
+
+        $(document).off('touchmove', touchMoveHandler);
     }
 
     // start of mobile-menu show/hide
