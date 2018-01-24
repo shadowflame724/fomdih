@@ -18,7 +18,8 @@
 @yield('content')
 
 @include('frontend.template.footer')
-@include('frontend.template.fomdih-forms')
+{{--@include('frontend.template.fomdih-forms')--}}
+@widget('fomdihForms')
 <!-- Scripts -->
 @stack('before-scripts')
 @include('frontend.template.script')
