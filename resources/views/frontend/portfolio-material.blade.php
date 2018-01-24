@@ -39,7 +39,7 @@
 
     <!-- start of portfolio-material -->
     <section id="portfolio-material">
-        <div class="main-top-container bg-cont">
+        <div class="main-top-container bg-cont" style="background-image: url('../storage/portfolio/{{ $portfolio->main_image }}')">
             <div class="container">
                 <div class="page-head">
                     <div class="bread-crumbs">
