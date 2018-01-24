@@ -156,10 +156,11 @@ class PortfolioRepository extends BaseRepository
 
     private function deletePortfolioImages($portfolio)
     {
+        $namePref='public\portfolio';
         try {
-            Storage::delete([$portfolio->main_image,
-                $portfolio->header_image,
-                $portfolio->thumb_image
+            Storage::delete([$namePref.$portfolio->main_image,
+                $namePref.$portfolio->header_image,
+                $namePref.$portfolio->thumb_image
             ]);
         } catch (\Exception $exception) {
             throw new GeneralException($exception->getMessage());
