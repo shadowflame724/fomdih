@@ -156,7 +156,7 @@
 
                 </div><!--col-->
                 <div class="col-md-10">
-                    <img class="image-preview" src="/storage/app/{{  $portfolio->main_image }}" alt="">
+                    <img class="image-preview" src="/storage/portfolio/{{  $portfolio->main_image }}" alt="">
                 </div><!--col-->
             </div>
         @endif
@@ -180,7 +180,7 @@
 
                 </div><!--col-->
                 <div class="col-md-10">
-                    <img class="image-preview" src="/storage/app/{{  $portfolio->header_image }}" alt="">
+                    <img class="image-preview" src="/storage/portfolio/{{ $portfolio->header_image }}" alt="">
                 </div><!--col-->
             </div>
         @endif
@@ -203,7 +203,7 @@
 
                 </div><!--col-->
                 <div class="col-md-10">
-                    <img class="image-preview" src="/storage/app/{{  $portfolio->thumb_image }}" alt="">
+                    <img class="image-preview" src="/storage/portfolio/{{  $portfolio->thumb_image }}" alt="">
                 </div><!--col-->
             </div>
         @endif

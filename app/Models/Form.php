@@ -11,7 +11,58 @@ class Form
     private $userTel;
     private $userEmail;
     private $text;
-    private $userFile;
+    private $userFileName;
+    private $userFilePath;
+    private $userFileMime;
+
+    /**
+     * @return mixed
+     */
+    public function getUserFileName()
+    {
+        return $this->userFileName;
+    }
+
+    /**
+     * @param mixed $userFileName
+     */
+    public function setUserFileName($userFileName)
+    {
+        $this->userFileName = $userFileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserFilePath()
+    {
+        return $this->userFilePath;
+    }
+
+    /**
+     * @param mixed $userFilePath
+     */
+    public function setUserFilePath($userFilePath)
+    {
+        $this->userFilePath = $userFilePath;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserFileMime()
+    {
+        return $this->userFileMime;
+    }
+
+    /**
+     * @param mixed $userFileMime
+     */
+    public function setUserFileMime($userFileMime)
+    {
+        $this->userFileMime = $userFileMime;
+    }
+
     private $createdAt;
     private $type;
 
@@ -115,22 +166,6 @@ class Form
     public function setText($text)
     {
         $this->text = $text;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUserFile()
-    {
-        return $this->userFile;
-    }
-
-    /**
-     * @param mixed $userFile
-     */
-    public function setUserFile($userFile)
-    {
-        $this->userFile = $userFile;
     }
 
 }

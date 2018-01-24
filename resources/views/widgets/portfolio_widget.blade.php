@@ -46,7 +46,7 @@
                             <a href="{{ route('frontend.portfolio.show', ['slug' => $portfolio->slug]) }}"
                                style="color: {{ $portfolio->main_color }}">
                                 <div class="img-cont">
-                                    <img src="/storage/app/{{ $portfolio->thumb_image }}" alt="portfolio-image">
+                                    <img src="/storage/portfolio/{{ $portfolio->thumb_image }}" alt="portfolio-image">
                                 </div>
                                 @include('frontend.template-svg.portfolio-'. $portfolio->type .'-hover')
                                 <div class="portfolio-info" style="color: {{ $portfolio->main_color }}">

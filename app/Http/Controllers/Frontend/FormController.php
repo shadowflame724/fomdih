@@ -35,14 +35,15 @@ class FormController extends Controller
             $request->validate([
                 'user-file' => ['max:20000', 'mimes:x3*,txt,pdf,docx,doc,xls,jp*,png,gif,bpm,psd,cdr,jpeg'],
             ]);
-            $path = $request->get('user-file');
-            $form->setUserFile($path);
+            $path = $request->file('user-file');
+            $form->setUserFileName($path->getClientOriginalName());
+            $form->setUserFilePath($path->getRealPath());
+            $form->setUserFileMime($path->getClientMimeType());
         }
 
         try{
             Mail::to($request->get('user-email'))
                 ->queue(new FormSent($form));
-
 
         }catch (\Exception $exception){
             return response()->json([
