@@ -45,7 +45,6 @@ var successFormTimer,
     fomdihForms = $(".fomdih-form");
 
 function touchMoveHandler(e) {
-    // e.preventDefault();
     e.stopImmediatePropagation();
 }
 
