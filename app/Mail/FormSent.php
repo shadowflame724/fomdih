@@ -31,13 +31,12 @@ class FormSent extends Mailable
      */
     public function build()
     {
-
-        if($this->form->getUserFile()){
+        if ($this->form->getUserFilePath()) {
             return $this->view('frontend.mail.form-store', [
                 'form' => $this->form
-            ])->attach($this->form->getUserFile()->getPathname(), [
-                'as' => $this->form->getUserFile()->getClientOriginalName(),
-                'mime' => $this->form->getUserFile()->getClientMimeType(),
+            ])->attach($this->form->getUserFilePath(), [
+                'as' => $this->form->getUserFileName(),
+                'mime' => $this->form->getUserFileMime(),
             ]);
         }else{
             $this->view('frontend.mail.form-store', [

@@ -57,7 +57,7 @@
 
                 <div class="material-header-cont">
                     <div class="img-cont material-logo-cont">
-                        <img src="/storage/app/{{ $portfolio->header_image }}"
+                        <img src="/storage/portfolio/{{ $portfolio->header_image }}"
                              alt="logistic-line-logo-white">
 
                     </div>

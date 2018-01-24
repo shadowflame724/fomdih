@@ -7,9 +7,10 @@
         $('.color-picker').colorpicker();
     }
     function initDeleteBlock () {
-        $('.remove-block').on('click', function(){
-            var blockId = $(this)["0"].dataset.id;
-            if(blockId != null){
+        $('.remove-block').on('click', function(e){
+            e.preventDefault();
+            var blockId = parseInt($(this)["0"].dataset.id);
+            if(blockId !== 0){
                 $.ajax({
                     type: "DELETE",
                     url: '/admin/block/' + blockId,
@@ -79,7 +80,7 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
-                '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
+                '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id=0><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
             '<hr>\n' +
             '            </div>';
 
@@ -103,7 +104,7 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
-            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
+            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id=0><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
 
             '<hr>\n' +
             '            </div>';
@@ -127,7 +128,7 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
-            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
+            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id=0><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
 
             '<hr>\n' +
             '            </div>';
@@ -151,7 +152,7 @@
             '                    </div><!--form-group-->\n' +
             '                </div>\n' +
             '</div>\n' +
-            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id="null"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
+            '                    <a href="#" style="margin-left: 95%" class="btn btn-danger remove-block" data-id=0><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="'+'{{__("buttons.general.crud.delete")}}'+'"></i></a>\n'+
 
             '<hr>\n' +
             '            </div>';

@@ -148,9 +148,10 @@ class PortfolioRepository extends BaseRepository
      */
     private function saveImg($file)
     {
-        $path = $file->storeAs('portfolio', $file->getClientOriginalName());
+        $name = $file->getClientOriginalName();
+        $file->storeAs('public\portfolio', $name);
 
-        return $path;
+        return $name;
     }
 
     private function deletePortfolioImages($portfolio)
