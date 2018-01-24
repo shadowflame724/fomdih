@@ -153,9 +153,9 @@ $(function () {
     // add target="_blank" for all anchors
     // $("a:not(.menu-item)").attr("target", "_blank");
 
-    function touchMoveHandler(e) {
-        e.stopImmediatePropagation();
-    }
+    // function touchMoveHandler(e) {
+    //     e.stopImmediatePropagation();
+    // }
 
     function headerMenuOn() {
         $(headerMenuBtn).addClass("menu-btn-active");
