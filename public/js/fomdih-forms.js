@@ -44,9 +44,16 @@
 var successFormTimer,
     fomdihForms = $(".fomdih-form");
 
+function touchMoveHandler(e) {
+    // e.preventDefault();
+    e.stopImmediatePropagation();
+}
+
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
+
+    $(fomdihForm).on('touchmove', touchMoveHandler);
 }
 
 function fomdihFormHide(fomdihForm) {
@@ -55,6 +62,8 @@ function fomdihFormHide(fomdihForm) {
     if(!$("header").hasClass("active")) {
         // check if the header is not active - avoid dual deactivation of body scroll
         $("html, body").removeClass("scroll-lock");
+
+        $(fomdihForm).off('touchmove', touchMoveHandler);
     }
 }
 
