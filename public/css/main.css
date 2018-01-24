@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ---------------------- FONTS ------------------------------*/
 /*************************************************************/
 @import url(../fonts/BebasNeueBold/styles.css);
@@ -2018,7 +2019,9 @@ footer {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   min-height: 100vh;
-  overflow-y: auto; }
+  overflow-y: auto;
+  /* однопальцевый скролл для iPad*/
+  -webkit-overflow-scrolling: touch; }
   .fomdih-form .close-btn .icon {
     cursor: pointer;
     transition: all 0.4s; }
