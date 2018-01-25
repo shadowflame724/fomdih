@@ -2164,7 +2164,8 @@ footer {
             -ms-flex-wrap: nowrap;
                 flex-wrap: nowrap; } }
     .order-form .form-top-cont .portfolio-item.form-card {
-      width: 100%; }
+      width: 100%;
+      pointer-events: none; }
       .order-form .form-top-cont .portfolio-item.form-card .portfolio-blot-hover {
         bottom: 35%;
         left: 0;

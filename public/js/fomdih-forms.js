@@ -48,9 +48,34 @@ var successFormTimer,
 //     e.stopImmediatePropagation();
 // }
 
+// if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+//     $(window).scroll(function () {
+//         $currentScrollPos = $(document).scrollTop();
+//     });
+//     $('.menu-button').click(function () {
+//         if ($('.menu-overlay').hasClass('active')) {
+//             $('body').css({
+//                 'position': 'fixed'
+//             });
+//             localStorage.cachedScrollPos = $currentScrollPos;
+//         } else {
+//             $('body').css({
+//                 'position': 'relative'
+//             });
+//             $('body').scrollTop(localStorage.cachedScrollPos);
+//         }
+//     });
+// }
+
+$(window).scroll(function () {
+    $currentScrollPos = $(document).scrollTop();
+});
+
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
+
+    localStorage.cachedScrollPos = $currentScrollPos;
 }
 
 function fomdihFormHide(fomdihForm) {
@@ -59,6 +84,8 @@ function fomdihFormHide(fomdihForm) {
     if(!$("header").hasClass("active")) {
         // check if the header is not active - avoid dual deactivation of body scroll
         $("html, body").removeClass("scroll-lock");
+
+        $('body').scrollTop(localStorage.cachedScrollPos);
     }
 }
 
