@@ -23,6 +23,11 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $form = new Form();
+        $request->validate([
+            'user-name' => 'required',
+            'user-email' => 'required|email',
+            'user-tel' => 'required',
+        ]);
 
         $form->setUserName($request->get('user-name'));
         $form->setUserEmail($request->get('user-email'));
@@ -42,7 +47,7 @@ class FormController extends Controller
         }
 
         try{
-            Mail::to($request->get('user-email'))
+            Mail::to('fomdih@gmail.com')
                 ->queue(new FormSent($form));
 
         }catch (\Exception $exception){
