@@ -2101,7 +2101,7 @@ footer {
 
 .order-form {
   padding-top: 7vh;
-  padding-bottom: 5vh; }
+  padding-bottom: 10vh; }
   .order-form .form-top-cont {
     width: calc((70% - 5vw) * 2 / 3);
     margin-left: auto;
