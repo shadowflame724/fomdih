@@ -27,10 +27,8 @@
             <hr/>
 
             @include('backend.portfolio._form')
-            @php( $count = 0 )
 
-
-            @include('backend.portfolio._form_blocks', ['count' => 0])
+            @include('backend.portfolio._form_blocks')
 
         </div><!--card-body-->
 
@@ -49,6 +47,3 @@
     {{ html()->closeModelForm() }}
 @endsection
 
-@push('after-scripts')
-    @include('backend.portfolio._js_blocks')
-@endpush

@@ -24,9 +24,6 @@
 
             <hr/>
 
-            @php
-            $count=0;
-            @endphp
             @include('backend.portfolio._form')
 
             @include('backend.portfolio._form_blocks')
@@ -47,7 +44,3 @@
     {{ html()->form()->close() }}
 
 @endsection
-
-@push('after-scripts')
-    @include('backend.portfolio._js_blocks')
-@endpush
