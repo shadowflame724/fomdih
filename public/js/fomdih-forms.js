@@ -67,27 +67,16 @@ var successFormTimer,
 //     });
 // }
 
-var currentScrollPos = $(document).scrollTop();
-$(window).scroll(function () {
-    currentScrollPos = $(document).scrollTop();
-});
-
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
-
-    localStorage.cachedScrollPos = $(currentScrollPos);
 }
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
+    $("html, body").removeClass("scroll-lock");
 
-    if(!$("header").hasClass("active")) {
-        // check if the header is not active - avoid dual deactivation of body scroll
-        $("html, body").removeClass("scroll-lock");
-
-        $('body').scrollTop(localStorage.cachedScrollPos);
-    }
+    $('html, body').scrollTop(+localStorage.cachedScrollPos);
 }
 
 function successFormShow() {
@@ -141,6 +130,8 @@ $(function () {
             goDistance =  temp - (window.innerHeight * 7 / 100);
 
             $('html, body').animate({scrollTop: goDistance}, 1000);
+
+            localStorage.cachedScrollPos = goDistance;
         }
         else {
             window.location.href = "/portfolio" + "#formOpen";
