@@ -44,15 +44,13 @@
 var successFormTimer,
     fomdihForms = $(".fomdih-form");
 
-function touchMoveHandler(e) {
-    e.stopImmediatePropagation();
-}
+// function touchMoveHandler(e) {
+//     e.stopImmediatePropagation();
+// }
 
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
-
-    $(fomdihForm).on('touchmove', touchMoveHandler);
 }
 
 function fomdihFormHide(fomdihForm) {
@@ -61,8 +59,6 @@ function fomdihFormHide(fomdihForm) {
     if(!$("header").hasClass("active")) {
         // check if the header is not active - avoid dual deactivation of body scroll
         $("html, body").removeClass("scroll-lock");
-
-        $(fomdihForm).off('touchmove', touchMoveHandler);
     }
 }
 
@@ -107,7 +103,7 @@ $(function () {
 
             temp2 = formHeader[0].offsetHeight;
             if (formHeader[0].offsetHeight != 0) {
-                // magic number - is not magic, this is padding from mobile mark-up
+                // magic number - is not magic, this is padding-top from mobile mark-up
                 temp2 += 15;
             }
             // console.log(formHeader);
@@ -122,6 +118,10 @@ $(function () {
             window.location.href = "/portfolio" + "#formOpen";
             // window.location.href = "portfolio.html" + "#formOpen";
         }
+
+        $(formCard).find("a").on("click", function(e) {
+            e.preventDefault();
+        })
 
     });
 
