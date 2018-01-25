@@ -67,15 +67,16 @@ var successFormTimer,
 //     });
 // }
 
+var currentScrollPos = $(document).scrollTop();
 $(window).scroll(function () {
-    $currentScrollPos = $(document).scrollTop();
+    currentScrollPos = $(document).scrollTop();
 });
 
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
 
-    localStorage.cachedScrollPos = $currentScrollPos;
+    localStorage.cachedScrollPos = $(currentScrollPos);
 }
 
 function fomdihFormHide(fomdihForm) {
