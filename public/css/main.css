@@ -728,9 +728,7 @@ footer {
             font-size: 30px; } }
     footer .footer-cont .contacts-col .social-icons-cont {
       padding-top: 5vh;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
+      display: none;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
       -ms-flex-pack: distribute;
