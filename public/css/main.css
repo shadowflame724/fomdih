@@ -2100,7 +2100,8 @@ footer {
     width: 360px; }
 
 .order-form {
-  padding-top: 7vh; }
+  padding-top: 7vh;
+  padding-bottom: 5vh; }
   .order-form .form-top-cont {
     width: calc((70% - 5vw) * 2 / 3);
     margin-left: auto;
