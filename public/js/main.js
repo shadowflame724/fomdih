@@ -160,6 +160,8 @@ $(function () {
         $(header).addClass("active");
         $(header).addClass("header-black");
         $("html, body").addClass("scroll-lock");
+
+        localStorage.cachedScrollPos = distanceTop;
     }
 
     function headerMenuOff() {
@@ -169,6 +171,8 @@ $(function () {
         $(header).removeClass("active");
         $(header).removeClass("header-black");
         $("html, body").removeClass("scroll-lock");
+
+        $('html, body').scrollTop(+localStorage.cachedScrollPos);
     }
 
     // start of mobile-menu show/hide
