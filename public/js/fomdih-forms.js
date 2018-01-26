@@ -72,14 +72,23 @@ var successFormTimer,
 //     });
 // }
 
+function disableScrollEvents(e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
+
+    $(window).on("scroll", disableScrollEvents);
 }
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
     $("html, body").removeClass("scroll-lock");
+
+    $(window).off("scroll", disableScrollEvents);
 
     // $("html, body").scrollTop(+saveScrollTop);
 

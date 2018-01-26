@@ -102,13 +102,7 @@ $(function () {
     // *****************    EVENT HANDLERS    *******************
 
     function resizeWindowHandler(event) {
-        // start of: determine is it mobile screen
-        if (window.innerWidth < mobileViewWidth) {
-            isMobileViewFlag = true;
-        } else {
-            isMobileViewFlag = false;
-        }
-        // end of: determine is it mobile screen
+        isMobileViewFlag = window.innerWidth < mobileViewWidth;
 
         if (window.innerWidth <= 1100) {
             // $(mainMenu).css("display", "none");
