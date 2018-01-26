@@ -135,7 +135,7 @@ $(function () {
             temp = temp1 - temp2;
             goDistance =  temp - (window.innerHeight * 7 / 100);
 
-            $("body").animate({scrollTop: goDistance}, 1000);
+            $("html, body").animate({scrollTop: goDistance}, 1000);
 
             localStorage.cachedScrollPos = goDistance;
         }
