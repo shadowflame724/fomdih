@@ -107,8 +107,7 @@
         </div>
 
         <div class="video-cont ratio-4-to-3">
-            <iframe width="854" height="480" src="https://www.youtube.com/embed/TlPTO6WstRU?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMTlPTO6WstRU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <!--<iframe src="https://player.vimeo.com/video/228724581?color=ffffff&title=0&byline=0&portrait=0&badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mM5_T-F1Yn4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
         <!-- portfolio-cta-cont: WILL BE SIMILAR on all portfolio-material-pages -->
