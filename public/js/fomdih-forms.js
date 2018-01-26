@@ -82,14 +82,14 @@ function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
 
-    $("html, body").on("scroll", disableScrollEvents);
+    $("html, body").on("touchmove", disableScrollEvents);
 }
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
     $("html, body").removeClass("scroll-lock");
 
-    $("html, body").off("scroll", disableScrollEvents);
+    $("html, body").off("touchmove", disableScrollEvents);
 
     // $("html, body").scrollTop(+saveScrollTop);
 
