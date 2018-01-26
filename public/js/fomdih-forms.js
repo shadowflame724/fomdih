@@ -49,9 +49,9 @@ var successFormTimer,
 //     e.stopPropagation();
 // }
 //
-// $("html, body").on("touchstart", touchMoveHandler, true);
-// $("html, body").on("touchmove", touchMoveHandler, true);
-// $("html, body").on("touchend", touchMoveHandler, true);
+// $("body").on("touchstart", touchMoveHandler, true);
+// $("body").on("touchmove", touchMoveHandler, true);
+// $("body").on("touchend", touchMoveHandler, true);
 
 // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
 //     $(window).scroll(function () {
@@ -79,9 +79,9 @@ function fomdihFormShow(fomdihForm) {
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
-    $("html, body").removeClass("scroll-lock");
+    $("body").removeClass("scroll-lock");
 
-    $("html, body").scrollTop(+localStorage.cachedScrollPos);
+    $("body").scrollTop(+localStorage.cachedScrollPos);
 
 }
 
@@ -135,7 +135,7 @@ $(function () {
             temp = temp1 - temp2;
             goDistance =  temp - (window.innerHeight * 7 / 100);
 
-            $("html, body").animate({scrollTop: goDistance}, 1000);
+            $("body").animate({scrollTop: goDistance}, 1000);
 
             localStorage.cachedScrollPos = goDistance;
         }

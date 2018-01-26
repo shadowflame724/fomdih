@@ -20,7 +20,7 @@
     });
     $(".back-to-top").click(function (e) {
         e.preventDefault();
-        $("html, body").animate({scrollTop: 0}, 1100);
+        $("body").animate({scrollTop: 0}, 1100);
     });
 })();
 
@@ -159,7 +159,7 @@ $(function () {
         $(mainMenu).fadeIn(0);
         $(header).addClass("active");
         $(header).addClass("header-black");
-        $("html, body").addClass("scroll-lock");
+        $("body").addClass("scroll-lock");
 
         localStorage.cachedScrollPos = distanceTop;
     }
@@ -170,9 +170,9 @@ $(function () {
         $(mainMenu).fadeOut(0);
         $(header).removeClass("active");
         $(header).removeClass("header-black");
-        $("html, body").removeClass("scroll-lock");
+        $("body").removeClass("scroll-lock");
 
-        $("html, body").scrollTop(+localStorage.cachedScrollPos);
+        $("body").scrollTop(+localStorage.cachedScrollPos);
     }
 
     // start of mobile-menu show/hide
