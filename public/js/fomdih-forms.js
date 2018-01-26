@@ -72,9 +72,9 @@ function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("body").addClass("scroll-lock");
 
-    $("html, body").on("touchstart", touchMoveHandler);
-    $("html, body").on("touchmove", touchMoveHandler);
-    $("html, body").on("touchend", touchMoveHandler);
+    $("html, body").on("touchstart", touchMoveHandler, true);
+    $("html, body").on("touchmove", touchMoveHandler, true);
+    $("html, body").on("touchend", touchMoveHandler, true);
 }
 
 function fomdihFormHide(fomdihForm) {
@@ -83,9 +83,9 @@ function fomdihFormHide(fomdihForm) {
 
     $("html, body").scrollTop(+localStorage.cachedScrollPos);
 
-    $("html, body").off("touchstart", touchMoveHandler);
-    $("html, body").off("touchmove", touchMoveHandler);
-    $("html, body").off("touchend", touchMoveHandler);
+    $("html, body").off("touchstart", touchMoveHandler, true);
+    $("html, body").off("touchmove", touchMoveHandler, true);
+    $("html, body").off("touchend", touchMoveHandler, true);
 }
 
 function successFormShow() {
