@@ -1950,9 +1950,6 @@ footer {
   position: relative;
   text-align: right;
   margin: 15px 0; }
-  @media all and (max-height: 600px) {
-    .add-file-cont {
-      display: none; } }
   .add-file-cont .inputfile {
     display: none; }
   .add-file-cont .inputfile + label {
