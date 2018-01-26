@@ -160,7 +160,7 @@ $(function () {
         $(mainMenu).fadeIn(0);
         $(header).addClass("active");
         $(header).addClass("header-black");
-        $("body").addClass("scroll-lock");
+        $("html, body").addClass("scroll-lock");
 
         // saveScrollTop = distanceTop;
     }
@@ -171,7 +171,7 @@ $(function () {
         $(mainMenu).fadeOut(0);
         $(header).removeClass("active");
         $(header).removeClass("header-black");
-        $("body").removeClass("scroll-lock");
+        $("html, body").removeClass("scroll-lock");
 
         // $("html, body").scrollTop(+saveScrollTop);
     }

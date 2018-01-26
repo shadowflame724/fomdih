@@ -74,12 +74,12 @@ var successFormTimer,
 
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
-    $("body").addClass("scroll-lock");
+    $("html, body").addClass("scroll-lock");
 }
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
-    $("body").removeClass("scroll-lock");
+    $("html, body").removeClass("scroll-lock");
 
     // $("html, body").scrollTop(+saveScrollTop);
 
