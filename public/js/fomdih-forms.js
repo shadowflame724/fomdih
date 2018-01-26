@@ -134,8 +134,8 @@ $(function () {
             localStorage.cachedScrollPos = goDistance;
         }
         else {
-            // window.location.href = "/portfolio" + "#formOpen";
-            window.location.href = "portfolio.html" + "#formOpen";
+            window.location.href = "/portfolio" + "#formOpen";
+            // window.location.href = "portfolio.html" + "#formOpen";
         }
 
         $(formCard).find("a").on("click", function(e) {
