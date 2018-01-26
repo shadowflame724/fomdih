@@ -44,10 +44,14 @@
 var successFormTimer,
     fomdihForms = $(".fomdih-form");
 
-function touchMoveHandler(e) {
-    e.preventDefault();
-    e.stopPropagation();
-}
+// function touchMoveHandler(e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+// }
+//
+// $("html, body").on("touchstart", touchMoveHandler, true);
+// $("html, body").on("touchmove", touchMoveHandler, true);
+// $("html, body").on("touchend", touchMoveHandler, true);
 
 // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
 //     $(window).scroll(function () {
@@ -71,10 +75,6 @@ function touchMoveHandler(e) {
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("body").addClass("scroll-lock");
-
-    $("html, body").on("touchstart", touchMoveHandler, true);
-    $("html, body").on("touchmove", touchMoveHandler, true);
-    $("html, body").on("touchend", touchMoveHandler, true);
 }
 
 function fomdihFormHide(fomdihForm) {
@@ -83,9 +83,6 @@ function fomdihFormHide(fomdihForm) {
 
     $("html, body").scrollTop(+localStorage.cachedScrollPos);
 
-    $("html, body").off("touchstart", touchMoveHandler, true);
-    $("html, body").off("touchmove", touchMoveHandler, true);
-    $("html, body").off("touchend", touchMoveHandler, true);
 }
 
 function successFormShow() {
