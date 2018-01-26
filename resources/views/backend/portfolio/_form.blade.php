@@ -208,6 +208,18 @@
             </div>
         @endif
 
+        <div class="form-group row">
+            {{ html()->label("Порядок")
+                ->class('col-md-2 form-control-label')
+                ->for('order') }}
+
+            <div class="col-md-10">
+                {{ html()->number('order')
+                    ->class('form-control')
+                    ->placeholder("0") }}
+            </div><!--col-->
+        </div><!--form-group-->
+
     </div><!--col-->
 </div><!--row-->
 

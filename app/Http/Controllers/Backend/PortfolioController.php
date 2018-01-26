@@ -36,7 +36,7 @@ class PortfolioController extends Controller
      */
     public function index(ManagePortfolioRequest $request)
     {
-        $portfolios = $this->portfolioRepository->all();
+        $portfolios = $this->portfolioRepository->all()->sortBy('order');
 
         return view('backend.portfolio.index', [
             'portfolios' => $portfolios
