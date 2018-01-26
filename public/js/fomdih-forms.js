@@ -44,9 +44,25 @@
 var successFormTimer,
     fomdihForms = $(".fomdih-form");
 
-// function touchMoveHandler(e) {
-//     e.stopImmediatePropagation();
-// }
+function touchMoveHandler(e) {
+    event.preventDefault();
+    event.stopPropagation();
+}
+
+document.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+}, false);
+
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+}, false);
+
+document.addEventListener('touchend', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+}, false);
 
 // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
 //     $(window).scroll(function () {
@@ -74,9 +90,9 @@ function fomdihFormShow(fomdihForm) {
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
-    $("body").removeClass("scroll-lock");
+    $("html, body").removeClass("scroll-lock");
 
-    $('body').scrollTop(+localStorage.cachedScrollPos);
+    $("html, body").scrollTop(+localStorage.cachedScrollPos);
 }
 
 function successFormShow() {
@@ -129,7 +145,7 @@ $(function () {
             temp = temp1 - temp2;
             goDistance =  temp - (window.innerHeight * 7 / 100);
 
-            $('html, body').animate({scrollTop: goDistance}, 1000);
+            $("html, body").animate({scrollTop: goDistance}, 1000);
 
             localStorage.cachedScrollPos = goDistance;
         }
