@@ -74,7 +74,8 @@ var successFormTimer,
 
 function disableScrollEvents(e) {
     e.preventDefault();
-    e.stopPropagation();
+    // e.stopPropagation();
+    e.stopImmediatePropagation();
 }
 
 function fomdihFormShow(fomdihForm) {
