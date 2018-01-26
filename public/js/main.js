@@ -161,7 +161,7 @@ $(function () {
         $(header).addClass("header-black");
         $("body").addClass("scroll-lock");
 
-        // localStorage.cachedScrollPos = distanceTop;
+        localStorage.cachedScrollPos = distanceTop;
     }
 
     function headerMenuOff() {
@@ -172,7 +172,7 @@ $(function () {
         $(header).removeClass("header-black");
         $("body").removeClass("scroll-lock");
 
-        // $("html, body").scrollTop(+localStorage.cachedScrollPos);
+        $("html, body").scrollTop(+localStorage.cachedScrollPos);
     }
 
     // start of mobile-menu show/hide
