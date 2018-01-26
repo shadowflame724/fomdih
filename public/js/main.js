@@ -172,7 +172,7 @@ $(function () {
         $(header).removeClass("header-black");
         $("body").removeClass("scroll-lock");
 
-        // $('body').scrollTop(+localStorage.cachedScrollPos);
+        $('body').scrollTop(+localStorage.cachedScrollPos);
     }
 
     // start of mobile-menu show/hide
