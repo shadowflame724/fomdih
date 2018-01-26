@@ -81,7 +81,7 @@ function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
     $("body").removeClass("scroll-lock");
 
-    $("html, body").scrollTop(+saveScrollTop);
+    // $("html, body").scrollTop(+saveScrollTop);
 
 }
 
@@ -137,7 +137,7 @@ $(function () {
 
             $("html, body").animate({scrollTop: goDistance}, 1000);
 
-            saveScrollTop = goDistance;
+            // saveScrollTop = goDistance;
         }
         else {
             window.location.href = "/portfolio" + "#formOpen";
