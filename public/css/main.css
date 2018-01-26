@@ -148,10 +148,7 @@ html, body {
   font-weight: normal; }
 
 .scroll-lock {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  overflow: hidden !important; }
+  overflow: hidden; }
 
 .gl-container {
   position: relative;
@@ -2113,8 +2110,10 @@ footer {
     width: 360px; }
 
 .order-form {
-  padding-top: 7vh;
-  padding-bottom: 10vh; }
+  padding-top: 7vh; }
+  @media all and (max-width: 1000px) {
+    .order-form {
+      padding-bottom: 10vh; } }
   .order-form .form-top-cont {
     width: calc((70% - 5vw) * 2 / 3);
     margin-left: auto;
