@@ -69,14 +69,14 @@ var successFormTimer,
 
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
-    $("html, body").addClass("scroll-lock");
+    $("body").addClass("scroll-lock");
 }
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
-    $("html, body").removeClass("scroll-lock");
+    $("body").removeClass("scroll-lock");
 
-    $('html, body').scrollTop(+localStorage.cachedScrollPos);
+    $('body').scrollTop(+localStorage.cachedScrollPos);
 }
 
 function successFormShow() {
@@ -134,8 +134,8 @@ $(function () {
             localStorage.cachedScrollPos = goDistance;
         }
         else {
-            window.location.href = "/portfolio" + "#formOpen";
-            // window.location.href = "portfolio.html" + "#formOpen";
+            // window.location.href = "/portfolio" + "#formOpen";
+            window.location.href = "portfolio.html" + "#formOpen";
         }
 
         $(formCard).find("a").on("click", function(e) {
