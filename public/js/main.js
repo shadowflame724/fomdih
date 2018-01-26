@@ -41,7 +41,8 @@ jQuery.fn.extend({
 
 // start of: determine is it mobile screen
 var mobileViewWidth = 1000,
-    isMobileViewFlag = true;
+    isMobileViewFlag = true,
+    saveScrollTop;
 // end of: determine is it mobile screen
 
 $(function () {
@@ -161,7 +162,7 @@ $(function () {
         $(header).addClass("header-black");
         $("body").addClass("scroll-lock");
 
-        localStorage.cachedScrollPos = distanceTop;
+        saveScrollTop = distanceTop;
     }
 
     function headerMenuOff() {
@@ -172,7 +173,7 @@ $(function () {
         $(header).removeClass("header-black");
         $("body").removeClass("scroll-lock");
 
-        $("html, body").scrollTop(+localStorage.cachedScrollPos);
+        $("html, body").scrollTop(+saveScrollTop);
     }
 
     // start of mobile-menu show/hide
