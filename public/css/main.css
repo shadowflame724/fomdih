@@ -1450,6 +1450,22 @@ footer {
   width: 100%;
   height: 90vh; }
 
+#portfolio-material .video-cont {
+  height: 0;
+  position: relative; }
+  #portfolio-material .video-cont iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+
+#portfolio-material .video-cont.ratio-16-to-9 {
+  padding-bottom: 56.25%; }
+
+#portfolio-material .video-cont.ratio-4-to-3 {
+  padding-bottom: 75%; }
+
 .info-block-cont {
   padding: 20px 0;
   display: -webkit-box;
@@ -2015,7 +2031,7 @@ footer {
 .fomdih-form {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 1001;
   top: 0;
   left: 0;
   bottom: 0;
