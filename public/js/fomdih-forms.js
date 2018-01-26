@@ -81,7 +81,7 @@ function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
     $("body").removeClass("scroll-lock");
 
-    $("body").scrollTop(+localStorage.cachedScrollPos);
+    $("html, body").scrollTop(+localStorage.cachedScrollPos);
 
 }
 
