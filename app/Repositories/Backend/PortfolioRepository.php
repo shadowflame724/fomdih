@@ -58,6 +58,8 @@ class PortfolioRepository extends BaseRepository
                 'seo_title' => isset($data['seo_title']) ? $data['seo_title'] : '',
                 'seo_description' => isset($data['seo_description']) ? $data['seo_description'] : '',
                 'seo_keywords' => isset($data['seo_keywords']) ? $data['seo_keywords'] : '',
+                'order' => isset($data['order']) ? $data['order'] : 0,
+
             ]);
 
             if ($portfolio) {
@@ -98,6 +100,8 @@ class PortfolioRepository extends BaseRepository
                 'seo_title' => isset($data['seo_title']) ? $data['seo_title'] : $portfolio->seo_title,
                 'seo_description' => isset($data['seo_description']) ? $data['seo_description'] : $portfolio->seo_description,
                 'seo_keywords' => isset($data['seo_keywords']) ? $data['seo_keywords'] : $portfolio->seo_keywords,
+                'order' => isset($data['order']) ? $data['order'] : $portfolio->order,
+
             ])) {
                 foreach ($data['blocks'] as $block){
                     if(isset($block['id'])) {

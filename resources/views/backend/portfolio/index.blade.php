@@ -26,6 +26,7 @@
                             <th>Категория</th>
                             <th>Название</th>
                             <th>Компания</th>
+                            <th>Порядок</th>
                             <th>{{ __('labels.general.actions') }}</th>
                         </tr>
                         </thead>
@@ -35,6 +36,7 @@
                                 <td>{{ $portfolio->category->name }}</td>
                                 <td>{!! ucfirst($portfolio->name) !!}</td>
                                 <td>{!! ucfirst($portfolio->company_name) !!}</td>
+                                <td>{{ $portfolio->order }}</td>
                                 <td>{!! $portfolio->action_buttons !!}</td>
                             </tr>
                         @endforeach

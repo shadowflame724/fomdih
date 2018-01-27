@@ -93,6 +93,20 @@
             @endswitch
         @endforeach
 
+        {{-- !!! TODO !!! --}}
+        <!-- different video containers for video with different ratio -->
+        <!-- class="video-cont" - general video container -->
+        <!-- class="ratio-16-to-9" - for video with ratio = 16:9 -->
+        <!-- class="ratio-4-to-3" - for video with ratio = 4:3 -->
+        <div class="video-cont ratio-16-to-9">
+            <iframe width="854" height="480" src="https://www.youtube.com/embed/TlPTO6WstRU?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMTlPTO6WstRU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!--<iframe src="https://player.vimeo.com/video/228724581?color=ffffff&title=0&byline=0&portrait=0&badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+        </div>
+
+        <div class="video-cont ratio-4-to-3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mM5_T-F1Yn4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
         <!-- portfolio-cta-cont: WILL BE SIMILAR on all portfolio-material-pages -->
         <div class="portfolio-material-cont portfolio-cta-cont"
              style="background-color: {{ $portfolioBlocks->last()->bg_color }}; color: {{ $portfolioBlocks->last()->color }}; text-align: center">

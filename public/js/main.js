@@ -41,7 +41,8 @@ jQuery.fn.extend({
 
 // start of: determine is it mobile screen
 var mobileViewWidth = 1000,
-    isMobileViewFlag = true;
+    isMobileViewFlag = true,
+    saveScrollTop;
 // end of: determine is it mobile screen
 
 $(function () {
@@ -101,13 +102,7 @@ $(function () {
     // *****************    EVENT HANDLERS    *******************
 
     function resizeWindowHandler(event) {
-        // start of: determine is it mobile screen
-        if (window.innerWidth < mobileViewWidth) {
-            isMobileViewFlag = true;
-        } else {
-            isMobileViewFlag = false;
-        }
-        // end of: determine is it mobile screen
+        isMobileViewFlag = window.innerWidth < mobileViewWidth;
 
         if (window.innerWidth <= 1100) {
             // $(mainMenu).css("display", "none");
@@ -153,10 +148,6 @@ $(function () {
     // add target="_blank" for all anchors
     // $("a:not(.menu-item)").attr("target", "_blank");
 
-    // function touchMoveHandler(e) {
-    //     e.stopImmediatePropagation();
-    // }
-
     function headerMenuOn() {
         $(headerMenuBtn).addClass("menu-btn-active");
         // $(mainMenu).slideDown();
@@ -165,7 +156,7 @@ $(function () {
         $(header).addClass("header-black");
         $("html, body").addClass("scroll-lock");
 
-        $(header).on('touchmove', touchMoveHandler);
+        // saveScrollTop = distanceTop;
     }
 
     function headerMenuOff() {
@@ -176,7 +167,7 @@ $(function () {
         $(header).removeClass("header-black");
         $("html, body").removeClass("scroll-lock");
 
-        $(header).off('touchmove', touchMoveHandler);
+        // $("html, body").scrollTop(+saveScrollTop);
     }
 
     // start of mobile-menu show/hide

@@ -28,7 +28,7 @@ class Portfolio extends Model
     protected $table = 'portfolios';
     protected $fillable = ['type', 'name', 'company_name', 'slug', 'description', 'category_id', 'header_image',
         'main_image', 'main_color', 'blot_color', 'svg', 'thumb_image',
-        'seo_title', 'seo_description', 'seo_keywords'];
+        'seo_title', 'seo_description', 'seo_keywords', 'order'];
 
 
     public function portfolioBlocks()

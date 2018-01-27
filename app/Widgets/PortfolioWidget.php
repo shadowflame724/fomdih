@@ -23,7 +23,7 @@ class PortfolioWidget extends AbstractWidget
     {
         $portfolioRepo = new PortfolioRepository();
         $categories = PortfolioCategory::all();
-        $portfolios = $portfolioRepo->all();
+        $portfolios = $portfolioRepo->all()->sortBy('order');
 
         return view('widgets.portfolio_widget', [
             'portfolios' => $portfolios,

@@ -44,7 +44,37 @@
 var successFormTimer,
     fomdihForms = $(".fomdih-form");
 
-function touchMoveHandler(e) {
+// function touchMoveHandler(e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+// }
+//
+// $("body").on("touchstart", touchMoveHandler, true);
+// $("body").on("touchmove", touchMoveHandler, true);
+// $("body").on("touchend", touchMoveHandler, true);
+
+// if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+//     $(window).scroll(function () {
+//         $currentScrollPos = $(document).scrollTop();
+//     });
+//     $('.menu-button').click(function () {
+//         if ($('.menu-overlay').hasClass('active')) {
+//             $('body').css({
+//                 'position': 'fixed'
+//             });
+//             localStorage.cachedScrollPos = $currentScrollPos;
+//         } else {
+//             $('body').css({
+//                 'position': 'relative'
+//             });
+//             $('body').scrollTop(localStorage.cachedScrollPos);
+//         }
+//     });
+// }
+
+function disableScrollEvents(e) {
+    e.preventDefault();
+    // e.stopPropagation();
     e.stopImmediatePropagation();
 }
 
@@ -52,18 +82,17 @@ function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
     $("html, body").addClass("scroll-lock");
 
-    $(fomdihForm).on('touchmove', touchMoveHandler);
+    // $("html, body").on("touchmove", disableScrollEvents);
 }
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
+    $("html, body").removeClass("scroll-lock");
 
-    if(!$("header").hasClass("active")) {
-        // check if the header is not active - avoid dual deactivation of body scroll
-        $("html, body").removeClass("scroll-lock");
+    // $("html, body").off("touchmove", disableScrollEvents);
 
-        $(fomdihForm).off('touchmove', touchMoveHandler);
-    }
+    // $("html, body").scrollTop(+saveScrollTop);
+
 }
 
 function successFormShow() {
@@ -107,7 +136,7 @@ $(function () {
 
             temp2 = formHeader[0].offsetHeight;
             if (formHeader[0].offsetHeight != 0) {
-                // magic number - is not magic, this is padding from mobile mark-up
+                // magic number - is not magic, this is padding-top from mobile mark-up
                 temp2 += 15;
             }
             // console.log(formHeader);
@@ -116,12 +145,18 @@ $(function () {
             temp = temp1 - temp2;
             goDistance =  temp - (window.innerHeight * 7 / 100);
 
-            $('html, body').animate({scrollTop: goDistance}, 1000);
+            $("html, body").animate({scrollTop: goDistance}, 1000);
+
+            // saveScrollTop = goDistance;
         }
         else {
             window.location.href = "/portfolio" + "#formOpen";
             // window.location.href = "portfolio.html" + "#formOpen";
         }
+
+        $(formCard).find("a").on("click", function(e) {
+            e.preventDefault();
+        })
 
     });
 
