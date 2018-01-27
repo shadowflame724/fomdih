@@ -209,14 +209,10 @@
         @endif
 
         <div class="form-group row">
-            {{ html()->label("Порядок")
-                ->class('col-md-2 form-control-label')
-                ->for('order') }}
-
+            <label class="col-md-2 form-control-label" for="order">Порядок</label>
             <div class="col-md-10">
-                {{ html()->number('order')
-                    ->class('form-control')
-                    ->placeholder("0") }}
+                <input type="number" name="order"
+                       value="{{ isset($portfolio) ? $portfolio->order : 0 }}" class="form-control">
             </div><!--col-->
         </div><!--form-group-->
 
