@@ -46,10 +46,7 @@
                         <a href="{{ route('frontend.index') }}">главная</a>
                         <a href="{{ route('frontend.portfolio') }}">наши работы</a>
                         <span class="active">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203.94 58.36"><defs><style>.cls-1 {
-                                            fill: {{ $portfolio->main_color }};
-                                        }</style></defs><title>breadcrumps-material</title>
-                                {!! $portfolio->svg !!}</svg>
+                                {!! $portfolio->svg !!}
                             <span>{{ $portfolio->company_name }}</span>
                     </span>
                     </div>
@@ -98,7 +95,7 @@
 
         <!-- portfolio-cta-cont: WILL BE SIMILAR on all portfolio-material-pages -->
         <div class="portfolio-material-cont portfolio-cta-cont"
-             style="background-color: #313131; color: #fff; text-align: center">
+             style="background-color: {{ $portfolioBlocks->last()->bg_color }}; color: {{ $portfolioBlocks->last()->color }}; text-align: center">
             <div class="middle-container">
                 <p>
                     <span>Спасибо за внимание!</span>

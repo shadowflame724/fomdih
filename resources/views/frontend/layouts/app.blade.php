@@ -9,8 +9,6 @@
     <meta name="description" content="@yield('seo_description', 'Laravel 5 Boilerplate')">
     <meta name="keywords" content="@yield('seo_keywords', 'Anthony Rappa')">
     @yield('meta')
-
-
     @stack('after-styles')
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
