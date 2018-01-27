@@ -45,7 +45,7 @@
     <div class="copy-right">
         <div class="container">
             <p>
-                &copy; 2017-2018 Компания Fomdih. Киев, Харьков
+                &copy; 2017-{{Carbon\Carbon::now()->year}} Компания Fomdih. Киев, Харьков
             </p>
         </div>
     </div>
