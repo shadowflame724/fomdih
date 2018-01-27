@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Listeners\Backend;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 /**
  * Class PortfolioEventListener.
@@ -32,6 +35,32 @@ class PortfolioEventListener
     }
 
     /**
+     * @param $event
+     */
+    public function onSaved($event)
+    {
+        $sitemap = App::make("sitemap");
+        $nowDatetime = \Carbon\Carbon::now('	Europe/Kiev')->toDateTimeString();
+        $baseURL = env('APP_URL');
+
+        $sitemap->add($baseURL, $nowDatetime, '1.0', 'daily');
+        $sitemap->add($baseURL . '/company', $nowDatetime, '0.9', 'daily');
+        $sitemap->add($baseURL . '/portfolio', $nowDatetime, '0.9', 'daily');
+        $sitemap->add($baseURL . '/contacts', $nowDatetime, '0.9', 'daily');
+
+        $portfolios = DB::table('portfolios')->orderBy('order')->get();
+        foreach ($portfolios as $portfolio)
+        {
+            $path = '/portfolio/' . $portfolio->slug;
+            $date = $portfolio->updated_at != null ? $portfolio->updated_at : $portfolio->created_at;
+            $sitemap->add($baseURL . $path, $date, '0.8', 'daily');
+        }
+        $sitemap->store('xml', 'sitemap');
+
+        \Log::info('Sitemap сгенерирован');
+    }
+
+    /**
      * Register the listeners for the subscriber.
      *
      * @param \Illuminate\Events\Dispatcher $events
@@ -51,6 +80,11 @@ class PortfolioEventListener
         $events->listen(
             \App\Events\Backend\Portfolio\PortfolioDeleted::class,
             'App\Listeners\Backend\PortfolioEventListener@onDeleted'
+        );
+
+        $events->listen(
+            \App\Events\Backend\Portfolio\PortfolioSaved::class,
+            'App\Listeners\Backend\PortfolioEventListener@onSaved'
         );
     }
 }
