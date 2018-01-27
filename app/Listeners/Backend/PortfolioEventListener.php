@@ -3,7 +3,6 @@
 namespace App\Listeners\Backend;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\URL;
 
 /**
  * Class PortfolioEventListener.
@@ -40,7 +39,7 @@ class PortfolioEventListener
     public function onSaved($event)
     {
         $sitemap = App::make("sitemap");
-        $nowDatetime = \Carbon\Carbon::now('	Europe/Kiev')->toDateTimeString();
+        $nowDatetime = \Carbon\Carbon::now('	Europe/Kiev');
         $baseURL = env('APP_URL');
 
         $sitemap->add($baseURL, $nowDatetime, '1.0', 'daily');

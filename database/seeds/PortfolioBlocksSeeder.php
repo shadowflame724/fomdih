@@ -493,6 +493,17 @@ class PortfolioBlocksSeeder extends Seeder
                 бизнеса на скорую руку. После увиденного результата, ее руки еще долго дрожали от радости.
             </p>
         </div>'
+            ],
+            [
+                'type' => 'video-16-9',
+                'content' => '<iframe width="854" height="480"
+                    src="https://www.youtube.com/embed/TlPTO6WstRU?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMTlPTO6WstRU"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+            ],
+            [
+                'type' => 'video-4-3',
+                'content' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/mM5_T-F1Yn4" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>'
             ]
         ];
 

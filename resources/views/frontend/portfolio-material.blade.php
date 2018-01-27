@@ -39,7 +39,8 @@
 
     <!-- start of portfolio-material -->
     <section id="portfolio-material">
-        <div class="main-top-container bg-cont" style="background-image: url('../storage/portfolio/{{ $portfolio->main_image }}')">
+        <div class="main-top-container bg-cont"
+             style="background-image: url('../storage/portfolio/{{ $portfolio->main_image }}')">
             <div class="container">
                 <div class="page-head">
                     <div class="bread-crumbs">
@@ -66,45 +67,60 @@
         </div>
 
         @foreach($portfolioBlocks as $block)
-            @switch($block->type)
-                @case('image')
-                    {!! $block->content !!}
-                @break
+        @switch($block->type)
+        @case('image')
+        {!! $block->content !!}
+        @break
 
-                @case('two_image')
-                    {!! $block->content !!}
-                </div>
-                @break
+        @case('two_image')
+        {!! $block->content !!}
+        </div>
+        @break
 
-                @case('pdf')
-                <div class="fomdih-book-container">
-                    <div data-configid="{!! $block->content !!}" style="" class="issuuembed"></div>
-                    <script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
-                </div>
-                @break
+        @case('pdf')
+        <div class="fomdih-book-container">
+            <div data-configid="{!! $block->content !!}" style="" class="issuuembed"></div>
+            <script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
+        </div>
+        @break
 
-                @default
-                <div class="portfolio-material-cont"
-                     style="background-color: {{ $block->bg_color }}; color: {{ $block->color }}; text-align: {{ $block->text_align }}">
-                    {!! $block->content !!}
+        @case('video-16-9')
+        <div class="video-cont ratio-16-to-9">
+            {!! $block->content !!}
 
-                </div>
-                @break
-            @endswitch
-        @endforeach
+        </div>
+        @break
 
-        {{-- !!! TODO !!! --}}
-        <!-- different video containers for video with different ratio -->
+        @case('video-4-3')
+        <div class="video-cont ratio-4-to-3">
+            {!! $block->content !!}
+        </div>
+        @break
+
+        @default
+        <div class="portfolio-material-cont"
+             style="background-color: {{ $block->bg_color }}; color: {{ $block->color }}; text-align: {{ $block->text_align }}">
+            {!! $block->content !!}
+        </div>
+    @break
+    @endswitch
+    @endforeach
+
+    {{-- !!! TODO !!! --}}
+    <!-- different video containers for video with different ratio -->
         <!-- class="video-cont" - general video container -->
         <!-- class="ratio-16-to-9" - for video with ratio = 16:9 -->
         <!-- class="ratio-4-to-3" - for video with ratio = 4:3 -->
         <div class="video-cont ratio-16-to-9">
-            <iframe width="854" height="480" src="https://www.youtube.com/embed/TlPTO6WstRU?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMTlPTO6WstRU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="854" height="480"
+                    src="https://www.youtube.com/embed/TlPTO6WstRU?list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbAVMTlPTO6WstRU"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <!--<iframe src="https://player.vimeo.com/video/228724581?color=ffffff&title=0&byline=0&portrait=0&badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
         </div>
 
         <div class="video-cont ratio-4-to-3">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/mM5_T-F1Yn4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mM5_T-F1Yn4" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
         <!-- portfolio-cta-cont: WILL BE SIMILAR on all portfolio-material-pages -->
