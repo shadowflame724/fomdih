@@ -2045,7 +2045,8 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: scroll; }
   .fomdih-form .form-wrapper {
     position: fixed;
     z-index: 1002;
