@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="g-recaptcha" data-sitekey="6LcX7UIUAAAAADRSQ3FHK5-E4Ul9kEYBSUNq018O"></div>
-                    <button class="g-recaptcha gl-yellow-btn submit-btn" type="submit" tabindex="4">
+                    <button class="gl-yellow-btn submit-btn" type="submit" tabindex="4">
                         @include('frontend.template-svg.button-brief')
                         <span>отправить</span>
                     </button>
