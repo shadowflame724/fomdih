@@ -24,21 +24,6 @@
     });
 })();
 
-// toggleText
-jQuery.fn.extend({
-    toggleText: function (a, b) {
-        var that = this;
-        if (that.text() != a && that.text() != b) {
-            that.text(a);
-        } else if (that.text() == a) {
-            that.text(b);
-        } else if (that.text() == b) {
-            that.text(a);
-        }
-        return this;
-    }
-});
-
 // start of: determine is it mobile screen
 var mobileViewWidth = 1000,
     isMobileViewFlag = true,
@@ -183,12 +168,6 @@ $(function () {
     });
     // end of mobile-menu show/hide
 
-    // read-more event handler
-    $(".read-more-btn").on("click", function () {
-        $(this.parentNode.querySelector(".for-read-more")).slideToggle();
-        $(this).toggleText("читать дальше...", "скрыть");
-    });
-
     // *************************************************************
 
     // ANIMATION BLOCK
@@ -203,6 +182,11 @@ $(function () {
             repeat: false
         });
     }
+
+    <!--PRELOADER !!!-->
+    setTimeout(function() {
+        $('#preloader').fadeOut(400);
+    }, 200);
 
 });
 
