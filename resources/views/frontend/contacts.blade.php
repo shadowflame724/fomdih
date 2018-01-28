@@ -100,7 +100,7 @@
                                 <span>Добавить файл</span>
                             </label>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6Ld4eUIUAAAAAI6K4nwRHEYYigccdvXqqzND83g3"></div>
+                        <div class="g-recaptcha" data-sitekey="6LcX7UIUAAAAADRSQ3FHK5-E4Ul9kEYBSUNq018O"></div>
 
                         <button type="submit" class="gl-yellow-btn submit-btn" tabindex="4">
                             @include('frontend.template-svg.button-brief')
@@ -141,7 +141,7 @@
                                 <span>Добавить файл</span>
                             </label>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6Ld4eUIUAAAAAI6K4nwRHEYYigccdvXqqzND83g3"></div>
+                        <div class="g-recaptcha" data-sitekey="6LcX7UIUAAAAADRSQ3FHK5-E4Ul9kEYBSUNq018O"></div>
 
                         <button type="submit" class="gl-yellow-btn submit-btn" tabindex="4">
                             @include('frontend.template-svg.button-brief')
