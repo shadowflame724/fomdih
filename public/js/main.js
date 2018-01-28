@@ -186,7 +186,7 @@ $(function () {
     <!--PRELOADER !!!-->
     setTimeout(function() {
         $('#preloader').fadeOut(400);
-    }, 2000);
+    }, 1000);
 
 });
 
