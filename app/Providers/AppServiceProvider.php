@@ -5,6 +5,9 @@ namespace App\Providers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Queue;
+use Illuminate\Queue\Events\JobProcessed;
+
 
 /**
  * Class AppServiceProvider.
@@ -58,6 +61,10 @@ class AppServiceProvider extends ServiceProvider
         // Set the default template for Pagination to use the included Bootstrap 4 template
         \Illuminate\Pagination\AbstractPaginator::defaultView('pagination::bootstrap-4');
         \Illuminate\Pagination\AbstractPaginator::defaultSimpleView('pagination::simple-bootstrap-4');
+
+//        Queue::after(function (JobProcessed $event) {
+//            var_dump($event);
+//        });
     }
 
     /**
