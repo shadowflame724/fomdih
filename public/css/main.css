@@ -149,7 +149,8 @@ html, body {
   font-weight: normal; }
 
 .scroll-lock {
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: -1; }
 
 .gl-container {
   position: relative;
