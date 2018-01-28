@@ -20,7 +20,7 @@
 
                         <div class="right-cont desktop-hidden">
                             <div class="lamp-cont">
-                                <img src="/images/index/svg/fomdih-lamp.svg">
+                                <img src="/images/index/svg/fomdih-lamp.svg" alt="fomdih-lamp">
                             </div>
                             <div class="lamp-text">
                                 <p class="size-80 wow fadeInRight" data-wow-delay="0.2s">Без</p>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="right-cont desktop-visible">
                         <div class="lamp-cont">
-                            <img src="/images/index/svg/fomdih-lamp.svg">
+                            <img src="/images/index/svg/fomdih-lamp.svg" alt="fomdih-lamp">
                         </div>
                         <div class="lamp-text">
                             <p class="size-80 wow fadeInRight" data-wow-delay="0.2s">Без</p>
