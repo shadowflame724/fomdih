@@ -23,10 +23,12 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $form = new Form();
+
         $request->validate([
             'user-name' => 'required',
             'user-email' => 'required|email',
             'user-tel' => 'required',
+            "g-recaptcha-response" => 'required',
         ]);
 
         $form->setUserName($request->get('user-name'));

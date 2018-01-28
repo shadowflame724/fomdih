@@ -10,7 +10,7 @@
     <meta name="keywords" content="@yield('seo_keywords', 'Anthony Rappa')">
     @yield('meta')
     @stack('after-styles')
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
