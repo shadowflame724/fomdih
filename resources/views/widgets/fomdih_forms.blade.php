@@ -78,10 +78,9 @@
                             <span>Добавить файл</span>
                         </label>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6Ld4eUIUAAAAAI6K4nwRHEYYigccdvXqqzND83g3"></div>
 
-
-                    <button class="gl-yellow-btn submit-btn g-recaptcha"  type="submit" class="gl-yellow-btn submit-btn" tabindex="4">
+                    <div class="g-recaptcha" data-sitekey="6LcX7UIUAAAAADRSQ3FHK5-E4Ul9kEYBSUNq018O"></div>
+                    <button class="g-recaptcha gl-yellow-btn submit-btn" type="submit" tabindex="4">
                         @include('frontend.template-svg.button-brief')
                         <span>отправить</span>
                     </button>
