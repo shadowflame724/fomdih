@@ -29,7 +29,8 @@ class Portfolio extends Model
     protected $table = 'portfolios';
     protected $fillable = ['type', 'name', 'company_name', 'slug', 'description', 'category_id', 'header_image',
         'main_image', 'main_color', 'blot_color', 'svg', 'thumb_image',
-        'seo_title', 'seo_description', 'seo_keywords', 'order'];
+        'seo_title', 'seo_description', 'seo_keywords', 'order',
+        'thx_but_color', 'thx_text_color', 'thx_but_color_hv', 'thx_text_color_hv'];
 
     protected $dispatchesEvents = [
         'saved' => PortfolioSaved::class,

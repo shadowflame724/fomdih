@@ -70,6 +70,10 @@ class PortfolioSeeder extends Seeder
             $portfolio['slug'] = 'firmennyy-stil-dlya-logistic-line-' . $key;
             $portfolio['created_at'] = $nowDatetime;
             $portfolio['updated_at'] = $nowDatetime;
+            $portfolio['thx_but_color'] = '#000';
+            $portfolio['thx_text_color'] = '#fff';
+            $portfolio['thx_but_color_hv'] = '#fff';
+            $portfolio['thx_text_color_hv'] = '#000';
         }
 
         DB::table('portfolios')->insert($portfolios);

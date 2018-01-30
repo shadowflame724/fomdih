@@ -9,7 +9,7 @@
         }
 
         #portfolio-material .main-top-container .page-head .bread-crumbs span.active {
-            color: #000;
+            color: {{ $portfolio->blot_color }};
         }
 
         #portfolio-material .main-top-container .page-head .bread-crumbs span.active svg path {
@@ -17,19 +17,19 @@
         }
 
         #portfolio-material .gl-yellow-btn {
-            color: #000;
+            color: {{ $portfolio->thx_but_color }};
         }
 
         #portfolio-material .gl-yellow-btn path {
-            fill: {{ $portfolio->blot_color }};
+            fill: {{ $portfolio->thx_text_color }};
         }
 
         #portfolio-material .gl-yellow-btn:hover {
-            color: #fff;
+            color: {{ $portfolio->thx_but_color_hv }};
         }
 
         #portfolio-material .gl-yellow-btn:hover path {
-            fill: #000;
+            fill: {{ $portfolio->thx_text_color_hv }};
         }
     </style>
 @endpush

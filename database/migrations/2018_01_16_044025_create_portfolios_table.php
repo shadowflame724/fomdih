@@ -35,6 +35,13 @@ class CreatePortfoliosTable extends Migration
             $table->string('seo_title')->nullable();
             $table->text('seo_description')->nullable();
             $table->text('seo_keywords')->nullable();
+
+            $table->string('thx_but_color')->nullable();
+            $table->string('thx_text_color')->nullable();
+            $table->string('thx_but_color_hv')->nullable();
+            $table->string('thx_text_color_hv')->nullable();
+
+
             $table->integer('order')->nullable();
 
             $table->timestamps();
