@@ -637,6 +637,7 @@
                 toolbar: 'fullscreen styleselect bold italic underline | forecolor backcolor| bullist numlist | link image | code | template',
                 image_caption: true,
                 image_title: true,
+                image_dimensions: false,
                 forced_root_block: false,
                 paste_text_sticky: true,
                 paste_text_sticky_default: true,
