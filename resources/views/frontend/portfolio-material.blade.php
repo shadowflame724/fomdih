@@ -108,7 +108,7 @@
 
         <!-- portfolio-cta-cont: WILL BE SIMILAR on all portfolio-material-pages -->
         <div class="portfolio-material-cont portfolio-cta-cont"
-             style="background-color: {{ $portfolioBlocks->last()->bg_color }}; color: {{ $portfolioBlocks->last()->color }}; text-align: center">
+             style="background-color: {{ $thxBlock['bg_color'] }}; color: {{ $thxBlock['color'] }}; text-align: center">
             <div class="middle-container">
                 <p>
                     <span>Спасибо за внимание!</span>

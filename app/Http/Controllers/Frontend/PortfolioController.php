@@ -20,10 +20,25 @@ class PortfolioController extends Controller
             abort(404);
         }
         $portfolioBlocks = $portfolio->portfolioBlocks->sortBy('order');
+        $thxBlock = [];
+        $reversed = $portfolioBlocks->reverse();
+
+        foreach ($reversed as $item){
+            if($item->bg_color){
+                $thxBlock = [
+                    'bg_color' => $item->bg_color,
+                    'color' => $item->color,
+                ];
+                break;
+            }else{
+                continue;
+            }
+        }
 
         return view('frontend.portfolio-material', [
             'portfolio' => $portfolio,
-            'portfolioBlocks' => $portfolioBlocks
+            'portfolioBlocks' => $portfolioBlocks,
+            'thxBlock' => $thxBlock
         ]);
     }
 }

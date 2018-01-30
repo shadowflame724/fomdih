@@ -219,30 +219,6 @@
         <div class="form-group row">
             {{ html()->label("Цвет THX кнопки*")
                 ->class('col-md-2 form-control-label')
-                ->for('thx_but_color') }}
-
-            <div class="col-md-10">
-                {{ html()->text('thx_but_color')
-                    ->class('form-control color-picker')
-                    ->placeholder("#313131")->required() }}
-            </div><!--col-->
-        </div><!--form-group-->
-
-        <div class="form-group row">
-            {{ html()->label("Цвет THX кнопки (наведение) *")
-                ->class('col-md-2 form-control-label')
-                ->for('thx_but_color_hv') }}
-
-            <div class="col-md-10">
-                {{ html()->text('thx_but_color_hv')
-                    ->class('form-control color-picker')
-                    ->placeholder("#313131")->required() }}
-            </div><!--col-->
-        </div><!--form-group-->
-
-        <div class="form-group row">
-            {{ html()->label("Цвет THX текста *")
-                ->class('col-md-2 form-control-label')
                 ->for('thx_text_color') }}
 
             <div class="col-md-10">
@@ -253,12 +229,36 @@
         </div><!--form-group-->
 
         <div class="form-group row">
-            {{ html()->label("Цвет THX текста (наведение) *")
+            {{ html()->label("Цвет THX кнопки (наведение) *")
                 ->class('col-md-2 form-control-label')
                 ->for('thx_text_color_hv') }}
 
             <div class="col-md-10">
                 {{ html()->text('thx_text_color_hv')
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
+            </div><!--col-->
+        </div><!--form-group-->
+
+        <div class="form-group row">
+            {{ html()->label("Цвет THX текста *")
+                ->class('col-md-2 form-control-label')
+                ->for('thx_but_color') }}
+
+            <div class="col-md-10">
+                {{ html()->text('thx_but_color')
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
+            </div><!--col-->
+        </div><!--form-group-->
+
+        <div class="form-group row">
+            {{ html()->label("Цвет THX текста (наведение) *")
+                ->class('col-md-2 form-control-label')
+                ->for('thx_but_color_hv') }}
+
+            <div class="col-md-10">
+                {{ html()->text('thx_but_color_hv')
                     ->class('form-control color-picker')
                     ->placeholder("#313131")->required() }}
             </div><!--col-->
