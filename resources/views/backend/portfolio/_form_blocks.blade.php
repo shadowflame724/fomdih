@@ -574,7 +574,7 @@
                 selector: 'textarea.blockTextBox',
                 min_height: 400,
                 resize: 'vertical',
-                plugins: 'fullscreen link image code lists paste template',
+                plugins: 'textcolor colorpicker fullscreen link image code lists paste template',
                 extended_valid_elements: 'input[id|name|value|type|class|style|required|placeholder|autocomplete|onclick]',
                 file_browser_callback: function (field_name, url, type, win) {
                     var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
@@ -634,7 +634,7 @@
                     ]
                     }
                 ],
-                toolbar: 'fullscreen styleselect bold italic underline | forecolor backcolor| bullist numlist | link image | code | template',
+                toolbar: 'forecolor fullscreen styleselect bold italic underline | forecolor backcolor| bullist numlist | link image | code | template',
                 image_caption: true,
                 image_title: true,
                 image_dimensions: false,
