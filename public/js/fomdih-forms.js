@@ -80,18 +80,18 @@ function disableScrollEvents(e) {
 
 function fomdihFormShow(fomdihForm) {
     $(fomdihForm).addClass("active").fadeIn(400);
-    $("html, body").addClass("scroll-lock");
+    $("html, body").addClass("scroll-lock-2");
 
     // $("html, body").on("touchmove", disableScrollEvents);
 }
 
 function fomdihFormHide(fomdihForm) {
     $(fomdihForm).removeClass("active").fadeOut(400);
-    $("html, body").removeClass("scroll-lock");
+    $("html, body").removeClass("scroll-lock-2");
 
     // $("html, body").off("touchmove", disableScrollEvents);
 
-    // $("html, body").scrollTop(+saveScrollTop);
+    $("html, body").scrollTop(+saveScrollTop);
 
 }
 
@@ -147,7 +147,7 @@ $(function () {
 
             $("html, body").animate({scrollTop: goDistance}, 1000);
 
-            // saveScrollTop = goDistance;
+            saveScrollTop = goDistance;
         }
         else {
             window.location.href = "/portfolio" + "#formOpen";

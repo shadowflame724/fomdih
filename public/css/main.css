@@ -150,10 +150,22 @@ html, body {
 
 .scroll-lock {
   overflow: hidden;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
-  position: fixed; }
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.scroll-lock-1 {
+  overflow: hidden; }
+
+.scroll-lock-2 {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .gl-container {
   position: relative;
@@ -2064,7 +2076,6 @@ footer {
     right: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     /* однопальцевый скролл для iPad*/
