@@ -150,7 +150,10 @@ html, body {
 
 .scroll-lock {
   overflow: hidden;
-  z-index: -1; }
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  position: fixed; }
 
 .gl-container {
   position: relative;
@@ -1381,7 +1384,7 @@ footer {
   #portfolio-material .main-top-container .material-header-cont .material-logo-cont {
     margin-top: 15vh;
     margin-bottom: 8vh; }
-    #portfolio-material .main-top-container .material-header-cont .material-logo-cont img {
+    #portfolio-material .main-top-container .material-header-cont .material-logo-cont img[src$=".svg"] {
       max-width: 1000px; }
   #portfolio-material .main-top-container .material-header-cont .material-header {
     font-size: 48px;
@@ -1650,6 +1653,9 @@ footer {
 .form-cont {
   /* Firefox 19+ */
   /* Firefox 18- */ }
+  .form-cont input, .form-cont textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none; }
   .form-cont .user-input {
     display: block;
     width: 100%;
@@ -2059,6 +2065,7 @@ footer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     min-height: 100vh;
+    overflow-x: hidden;
     overflow-y: auto;
     /* однопальцевый скролл для iPad*/
     -webkit-overflow-scrolling: touch;
