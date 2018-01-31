@@ -214,6 +214,7 @@ button {
 
 .gl-yellow-btn, .gl-transparent-btn {
   position: relative;
+  z-index: 5;
   display: block;
   margin: 15px auto;
   padding: 15px 10px;
@@ -1667,15 +1668,14 @@ footer {
   /* Firefox 18- */ }
   .form-cont input, .form-cont textarea {
     -webkit-appearance: none;
-    -moz-appearance: none; }
-  .form-cont .user-input {
-    display: block;
-    width: 100%;
-    padding: 20px 20px;
-    font-size: 18px;
-    font-family: "ProximaNova-Regular", sans-serif;
-    color: #fff;
-    background-color: transparent; }
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none; }
+    .form-cont input:focus, .form-cont textarea:focus {
+      outline-offset: 0; }
+  .form-cont input, .form-cont button, .form-cont textarea, .form-cont select {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important; }
   .form-cont ::-webkit-input-placeholder {
     color: #bcc4d0; }
   .form-cont ::-moz-placeholder {
@@ -1684,6 +1684,14 @@ footer {
     color: #bcc4d0; }
   .form-cont :-ms-input-placeholder {
     color: #bcc4d0; }
+  .form-cont .user-input {
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    font-size: 18px;
+    font-family: "ProximaNova-Regular", sans-serif;
+    color: #fff;
+    background-color: transparent; }
   .form-cont .inputs-cont {
     padding: 30px 0;
     display: -webkit-box;
@@ -1979,6 +1987,7 @@ footer {
 /*custom file upload*/
 .add-file-cont {
   position: relative;
+  z-index: 1;
   text-align: right;
   margin: 15px 0; }
   .add-file-cont .inputfile {
@@ -2114,6 +2123,7 @@ footer {
         fill: #ffc700; }
   .fomdih-form .form-header {
     position: relative;
+    z-index: 1;
     margin-bottom: 10px;
     font-size: 72px;
     font-family: "BebasNeueBold", sans-serif;
@@ -2158,6 +2168,10 @@ footer {
   @media all and (max-width: 1000px) {
     .order-form .form-wrapper {
       padding-bottom: 10vh; } }
+
+.order-form .right-cont {
+  position: relative;
+  z-index: 5; }
 
 .order-form .form-top-cont {
   width: calc((70% - 5vw) * 2 / 3);
