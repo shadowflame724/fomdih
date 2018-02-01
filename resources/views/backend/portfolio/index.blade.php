@@ -23,7 +23,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Категория</th>
+                            <th>Категории</th>
                             <th>Название</th>
                             <th>Компания</th>
                             <th>Порядок</th>
@@ -33,7 +33,7 @@
                         <tbody>
                         @foreach ($portfolios as $portfolio)
                             <tr>
-                                <td>{{ $portfolio->category->name }}</td>
+                                <td>@foreach($portfolio->categories as $category){{ $category->name }}, @endforeach</td>
                                 <td>{!! ucfirst($portfolio->name) !!}</td>
                                 <td>{!! ucfirst($portfolio->company_name) !!}</td>
                                 <td>{{ $portfolio->order }}</td>

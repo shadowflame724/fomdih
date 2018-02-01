@@ -30,7 +30,8 @@ class Portfolio extends Model
     protected $fillable = ['type', 'name', 'company_name', 'slug', 'description', 'category_id', 'header_image',
         'main_image', 'main_color', 'blot_color', 'svg', 'thumb_image',
         'seo_title', 'seo_description', 'seo_keywords', 'order',
-        'thx_but_color', 'thx_text_color', 'thx_but_color_hv', 'thx_text_color_hv'];
+        'thx_but_color', 'thx_text_color', 'thx_but_color_hv', 'thx_text_color_hv',
+        'header_type', 'page_head_color', 'page_head_bread_color', 'page_head_bread_active_color'];
 
     protected $dispatchesEvents = [
         'saved' => PortfolioSaved::class,
@@ -42,8 +43,9 @@ class Portfolio extends Model
         return $this->hasMany(PortfolioBlocks::class);
     }
 
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(PortfolioCategory::class);
+        return $this->belongsToMany(PortfolioCategory::class, 'category_portfolios',
+            'portfolio_id', 'portfolio_category_id');
     }
 }

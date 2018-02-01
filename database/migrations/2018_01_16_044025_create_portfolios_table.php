@@ -41,7 +41,6 @@ class CreatePortfoliosTable extends Migration
             $table->string('thx_but_color_hv')->nullable();
             $table->string('thx_text_color_hv')->nullable();
 
-
             $table->integer('order')->nullable();
 
             $table->timestamps();

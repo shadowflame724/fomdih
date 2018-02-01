@@ -12,10 +12,10 @@
             ->for('category_id') }}
 
             <div class="col-md-10">
-                <select name="category_id" id="category_id" class="form-control" required="required">
+                <select multiple name="categories[]" id="category_id" class="form-control" required="required">
                     @foreach ($categories as $category)
                         @if(isset($portfolio))
-                            <option value="{{ $category->id }}" {{ $portfolio->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                            <option value="{{ $category->id }}" @foreach($portfolio->categories as $cat) {{ $cat->id == $category->id ? 'selected' : '' }} @endforeach>{{ $category->name }}</option>
                         @else
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endif
@@ -39,6 +39,60 @@
                         <option value="big">Big</option>
                     @endif
                 </select>
+            </div><!--col-->
+        </div><!--form-group-->
+
+        <div class="form-group row">
+            {{ html()->label('Тип шапки *')
+            ->class('col-md-2 form-control-label')
+            ->for('header_type') }}
+
+            <div class="col-md-10">
+                <select name="header_type" id="header_type" class="form-control" required="required">
+                    @if(isset($portfolio))
+                        <option value="white" {{ $portfolio->header_type == 'white' ? 'selected' : '' }}>White</option>
+                        <option value="black" {{ $portfolio->header_type == 'black' ? 'selected' : '' }}>Black</option>
+                    @else
+                        <option value="white">White</option>
+                        <option value="black">Black</option>
+                    @endif
+                </select>
+            </div><!--col-->
+        </div><!--form-group-->
+
+        <div class="form-group row">
+            {{ html()->label("Цвет описания шапки *")
+                ->class('col-md-2 form-control-label')
+                ->for('page_head_color') }}
+
+            <div class="col-md-10">
+                {{ html()->text('page_head_color')
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
+            </div><!--col-->
+        </div><!--form-group-->
+
+        <div class="form-group row">
+            {{ html()->label("Цвет хлебных крошек текста *")
+                ->class('col-md-2 form-control-label')
+                ->for('page_head_bread_color') }}
+
+            <div class="col-md-10">
+                {{ html()->text('page_head_bread_color')
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
+            </div><!--col-->
+        </div><!--form-group-->
+
+        <div class="form-group row">
+            {{ html()->label("Цвет хлебных крошек текста (наведение) *")
+                ->class('col-md-2 form-control-label')
+                ->for('page_head_bread_active_color') }}
+
+            <div class="col-md-10">
+                {{ html()->text('page_head_bread_active_color')
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
             </div><!--col-->
         </div><!--form-group-->
 

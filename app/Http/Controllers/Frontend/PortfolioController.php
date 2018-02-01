@@ -15,7 +15,7 @@ class PortfolioController extends Controller
      */
     public function show($slug)
     {
-        $portfolio = Portfolio::where('slug', $slug)->with(['category', 'portfolioBlocks'])->first();
+        $portfolio = Portfolio::where('slug', $slug)->with(['categories', 'portfolioBlocks'])->first();
         if($portfolio == null){
             abort(404);
         }

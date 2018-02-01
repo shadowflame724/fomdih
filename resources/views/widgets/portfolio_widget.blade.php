@@ -42,7 +42,7 @@
 
                     @foreach($portfolios as $portfolio)
 
-                        <div class="portfolio-item small-item category-{{ $portfolio->category_id }}">
+                        <div class="portfolio-item small-item @foreach($portfolio->categories as $category)category-{{ $category->id }} @endforeach ">
                             <a href="{{ route('frontend.portfolio.show', ['slug' => $portfolio->slug]) }}"
                                style="color: {{ $portfolio->main_color }}">
                                 <div class="img-cont">

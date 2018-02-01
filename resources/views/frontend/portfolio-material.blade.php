@@ -5,11 +5,11 @@
 @push('after-styles')
     <style>
         #portfolio-material .main-top-container .page-head {
-            fill: {{ $portfolio->blot_color }};
+            fill: {{ $portfolio->page_head_bread_color }} !important;
         }
 
         #portfolio-material .main-top-container .page-head .bread-crumbs span.active {
-            color: {{ $portfolio->blot_color }};
+            color: {{ $portfolio->page_head_bread_active_color }};
         }
 
         #portfolio-material .main-top-container .page-head .bread-crumbs span.active svg path {
@@ -35,7 +35,11 @@
 @endpush
 
 @section('content')
-    @include('frontend.template.header-transparent')
+    @if($portfolio->header_type == 'black')
+        @include('frontend.template.header-white')
+    @else
+        @include('frontend.template.header-transparent')
+    @endif
 
     <!-- start of portfolio-material -->
     <section id="portfolio-material">
@@ -59,7 +63,7 @@
                              alt="logistic-line-logo-white">
 
                     </div>
-                    <h1 class="material-header">{{ $portfolio->description }} <span
+                    <h1 class="material-header" style="color: {{ $portfolio->page_head_color }};">{{ $portfolio->description }} <span
                                 style="color: {{ $portfolio->main_color }}">“{{ $portfolio->company_name }}”</span></h1>
                 </div>
 
@@ -106,7 +110,7 @@
     @endswitch
     @endforeach
 
-        <!-- portfolio-cta-cont: WILL BE SIMILAR on all portfolio-material-pages -->
+    <!-- portfolio-cta-cont: WILL BE SIMILAR on all portfolio-material-pages -->
         <div class="portfolio-material-cont portfolio-cta-cont"
              style="background-color: {{ $thxBlock['bg_color'] }}; color: {{ $thxBlock['color'] }}; text-align: center">
             <div class="middle-container">

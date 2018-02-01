@@ -7,6 +7,7 @@ use App\Events\Backend\Portfolio\PortfolioUpdated;
 use App\Events\Backend\Portfolio\PortfolioDeleted;
 use App\Models\Portfolio;
 use App\Models\PortfolioBlocks;
+use App\Models\PortfolioCategory;
 use App\Repositories\Backend\Access\User\SocialRepository;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
@@ -30,7 +31,7 @@ class PortfolioRepository extends BaseRepository
 
     public function all(array $columns = ['*'])
     {
-        return parent::all($columns)->load('category');
+        return parent::all($columns)->load('categories');
     }
 
     /**
@@ -46,7 +47,7 @@ class PortfolioRepository extends BaseRepository
                 'type' => isset($data['type']) ? $data['type'] : 'small',
                 'name' => $data['name'],
                 'slug' => $data['slug'],
-                'category_id' => $data['category_id'],
+//                'category_id' => $data['category_id'],
                 'description' => $data['description'],
                 'main_color' => isset($data['main_color']) ? $data['main_color'] : '',
                 'blot_color' => isset($data['blot_color']) ? $data['blot_color'] : '',
@@ -64,9 +65,18 @@ class PortfolioRepository extends BaseRepository
                 'thx_text_color' => isset($data['thx_text_color']) ? $data['thx_text_color'] : '',
                 'thx_but_color_hv' => isset($data['thx_but_color_hv']) ? $data['thx_but_color_hv'] : '',
                 'thx_text_color_hv' => isset($data['thx_text_color_hv']) ? $data['thx_text_color_hv'] : '',
+
+                'header_type' => isset($data['header_type']) ? $data['header_type'] : 'white',
+                'page_head_color' => isset($data['page_head_color']) ? $data['page_head_color'] : '',
+                'page_head_bread_color' => isset($data['page_head_bread_color']) ? $data['page_head_bread_color'] : '',
+                'page_head_bread_active_color' => isset($data['page_head_bread_active_color']) ? $data['page_head_bread_active_color'] : '',
+
             ]);
 
             if ($portfolio) {
+                foreach ($data['categories'] as $id){
+                    $portfolio->categories()->attach($id);
+                }
                 if(isset($data['blocks'])) {
                     $portfolio->portfolioBlocks()->createMany($data['blocks']);
                 }
@@ -93,7 +103,7 @@ class PortfolioRepository extends BaseRepository
                 'type' => isset($data['type']) ? $data['type'] : $portfolio->type,
                 'name' => isset($data['name']) ? $data['name'] : $portfolio->name,
                 'slug' => isset($data['slug']) ? $data['slug'] : $portfolio->slug,
-                'category_id' => $data['category_id'],
+//                'category_id' => $data['category_id'],
                 'description' => isset($data['description']) ? $data['description'] : $portfolio->description,
                 'main_color' => isset($data['main_color']) ? $data['main_color'] : $portfolio->main_color,
                 'blot_color' => isset($data['blot_color']) ? $data['blot_color'] : $portfolio->blot_color,
@@ -111,7 +121,16 @@ class PortfolioRepository extends BaseRepository
                 'thx_but_color_hv' => isset($data['thx_but_color_hv']) ? $data['thx_but_color_hv'] : $portfolio->thx_but_color_hv,
                 'thx_text_color_hv' => isset($data['thx_text_color_hv']) ? $data['thx_text_color_hv'] : $portfolio->thx_text_color_hv,
 
+                'header_type' => isset($data['header_type']) ? $data['header_type'] : $portfolio->header_type,
+                'page_head_color' => isset($data['page_head_color']) ? $data['page_head_color'] : $portfolio->page_head_color,
+                'page_head_bread_color' => isset($data['page_head_bread_color']) ? $data['page_head_bread_color'] : $portfolio->page_head_bread_color,
+                'page_head_bread_active_color' => isset($data['page_head_bread_active_color']) ? $data['page_head_bread_active_color'] : $portfolio->page_head_bread_active_color,
+
             ])) {
+                $portfolio->categories()->detach();
+                foreach ($data['categories'] as $id){
+                    $portfolio->categories()->attach($id);
+                }
                 foreach ($data['blocks'] as $block){
                     if(isset($block['id'])) {
                         $portfolioBlock = PortfolioBlocks::find($block['id']);
@@ -142,6 +161,7 @@ class PortfolioRepository extends BaseRepository
 
             if ($portfolio->delete()) {
                 $this->deletePortfolioImages($portfolio);
+                $portfolio->categories()->detach();
                 $blocks = $portfolio->portfolioBlocks();
                 foreach ($blocks as $block){
                     $block->delete();
