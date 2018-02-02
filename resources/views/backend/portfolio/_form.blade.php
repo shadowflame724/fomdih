@@ -271,6 +271,18 @@
         </div><!--form-group-->
 
         <div class="form-group row">
+            {{ html()->label("Цвет 'Спасибо за внимание' *")
+                ->class('col-md-2 form-control-label')
+                ->for('thx_attention_color') }}
+
+            <div class="col-md-10">
+                {{ html()->text('thx_attention_color')
+                    ->class('form-control color-picker')
+                    ->placeholder("#313131")->required() }}
+            </div><!--col-->
+        </div><!--form-group-->
+
+        <div class="form-group row">
             {{ html()->label("Цвет THX кнопки*")
                 ->class('col-md-2 form-control-label')
                 ->for('thx_text_color') }}

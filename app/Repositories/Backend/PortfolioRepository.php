@@ -61,6 +61,7 @@ class PortfolioRepository extends BaseRepository
                 'seo_keywords' => isset($data['seo_keywords']) ? $data['seo_keywords'] : '',
                 'order' => isset($data['order']) ? $data['order'] : 0,
 
+                'thx_attention_color' => isset($data['thx_attention_color']) ? $data['thx_attention_color'] : '',
                 'thx_but_color' => isset($data['thx_but_color']) ? $data['thx_but_color'] : '',
                 'thx_text_color' => isset($data['thx_text_color']) ? $data['thx_text_color'] : '',
                 'thx_but_color_hv' => isset($data['thx_but_color_hv']) ? $data['thx_but_color_hv'] : '',
@@ -116,6 +117,7 @@ class PortfolioRepository extends BaseRepository
                 'seo_keywords' => isset($data['seo_keywords']) ? $data['seo_keywords'] : $portfolio->seo_keywords,
                 'order' => isset($data['order']) ? $data['order'] : $portfolio->order,
 
+                'thx_attention_color' => isset($data['thx_attention_color']) ? $data['thx_attention_color'] : $portfolio->thx_attention_color,
                 'thx_but_color' => isset($data['thx_but_color']) ? $data['thx_but_color'] : $portfolio->thx_but_color,
                 'thx_text_color' => isset($data['thx_text_color']) ? $data['thx_text_color'] : $portfolio->thx_text_color,
                 'thx_but_color_hv' => isset($data['thx_but_color_hv']) ? $data['thx_but_color_hv'] : $portfolio->thx_but_color_hv,
