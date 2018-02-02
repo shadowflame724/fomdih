@@ -5,7 +5,7 @@
 @push('after-styles')
     <style>
         #portfolio-material .main-top-container .page-head {
-            fill: {{ $portfolio->page_head_bread_color }} !important;
+            color: {{ $portfolio->page_head_bread_color }};
         }
 
         #portfolio-material .main-top-container .page-head .bread-crumbs span.active {
