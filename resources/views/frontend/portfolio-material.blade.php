@@ -115,7 +115,7 @@
              style="background-color: {{ $thxBlock['bg_color'] }}; color: {{ $portfolio->thx_attention_color }}; text-align: center">
             <div class="middle-container">
                 <p>
-                    <span>Спасибо за внимание!</span>
+                    <span style="color: {{ $portfolio->thx_attention_color }}">Спасибо за внимание!</span>
                 </p>
 
                 <a href="/" class="gl-yellow-btn order-form-btn">
