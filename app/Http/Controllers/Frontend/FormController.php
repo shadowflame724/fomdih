@@ -27,8 +27,7 @@ class FormController extends Controller
         $request->validate([
             'user-name' => 'required',
             'user-email' => 'required|email',
-            'user-tel' => 'required',
-            "g-recaptcha-response" => 'required',
+            'user-tel' => 'required'
         ]);
 
         $form->setUserName($request->get('user-name'));
