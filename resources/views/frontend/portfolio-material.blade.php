@@ -64,7 +64,7 @@
 
                     </div>
                     <h1 class="material-header" style="color: {{ $portfolio->page_head_color }};">{{ $portfolio->description }} <span
-                                style="color: {{ $portfolio->main_color }}">“{{ $portfolio->company_name }}”</span></h1>
+                                style="color: {{ $portfolio->main_color }}">{{ $portfolio->company_name }}</span></h1>
                 </div>
 
             </div>

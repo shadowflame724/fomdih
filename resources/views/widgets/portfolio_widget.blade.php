@@ -52,7 +52,7 @@
                                 <div class="portfolio-info" style="color: {{ $portfolio->main_color }}">
                                     @include('frontend.template-svg.portfolio-'. $portfolio->type .'-blot')
                                     <p class="portfolio-name" style="color: {{ $portfolio->blot_color }}">
-                                        {{ $portfolio->name }} <span>“{{ $portfolio->company_name }}”</span>
+                                        {{ $portfolio->name }} <span>{{ $portfolio->company_name }}</span>
                                     </p>
                                 </div>
                             </a>
